@@ -15,4 +15,4 @@ S. Hart, I. Hedtke, M. Müller-Hannemann, S. Murthy, ’A fast search algorithm
 triples and an application for 5 x 5 matrix multiplication’, Groups - Complexity - Cryp-
 tology, to appear in May 2015.
 
-The application will be developed using the Ruby on Rails framework.  The numerical data about TPP triples will be stored in a relational database implemented in MySQL (community edition).
+The application will be developed using the Ruby on Rails framework and will present a clean and nice web interface for users to query and view a set of numerical and non-numerical parameters about TPP triples and the finite groups in which they occur.  The data will be stored in a relational database implemented in MySQL (community edition) and will be served up to the interface by a MySQL server.
