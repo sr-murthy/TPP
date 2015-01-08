@@ -1,0 +1,3683 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ <head>
+  <title>Brute-force TPP triples search with subsets/subgroups</title>
+	<meta http-equiv="Content-type" content="text/html;charset=iso-8859-1" />
+	<script type="text/javascript" src="sorttable.js"></script>
+	<style type="text/css">
+table, th, td
+{
+border: 1px solid black;
+white-space:nowrap;
+border-collapse:collapse;
+padding:3px;
+text-align: left;
+}
+</style>
+   </head>
+ <body style="font-family:sans-serif;">
+ 
+ 
+ 
+   <h1>Brute-force TPP triples search, nonabelian groups of order
+257-287</h1>
+   
+   <p>IdSmallGroup: Subsets tested. IdSmallGroup*: Only Subgroups tested.</p>
+   <p><i>&beta;</i>(<i>G</i>) := TPP-Capacity := max { <i>npm</i> : <i>G</i> realizes &lt;<i>n</i>,<i>p</i>,<i>m</i>&gt; }
+   <br />
+   <i>&beta;</i><sub>g</sub>(<i>G</i>) := TPP-Capacity for subgroups
+   <br />
+   <i>D</i><sub>3</sub>(<i>G</i>) := 3-Character-Capacity := &sum;<sub><i>i</i></sub> <i>d</i><sub><i>i</i></sub><sup>3</sup>
+   </p>
+
+<table class="sortable" id="thetable">
+<thead>
+<tr style="vertical-align:top;background-color:#A8A8A8;">
+<th>IdSmallGroup</th>
+<th>CharacterDegrees</th>
+<th><i>D</i><sub>3</sub>(<i>G</i>)</th>
+<th></th>
+<th><i>&beta;</i><sub>g</sub>(<i>G</i>)</th>
+<th></th>
+<th><i>&beta;</i><sub>g</sub>(<i>G</i>)&nbsp;/&nbsp;<i>D</i><sub>3</sub>(<i>G</i>)</th>
+<th><i>&beta;</i><sub>g</sub>(<i>G</i>)&nbsp;/&nbsp;|<i>G</i>|</th>
+<th>&lt;<i>n</i>,<i>p</i>,<i>m</i>&gt;</th>
+<th></th>
+<th>Details&nbsp;Subgroups</th>
+</tr>
+</thead>
+
+<tbody>
+
+
+<tr>
+<td>[ 258, 1 ]*</td>
+<td>(C43 : C3) : C2<br /><br />[ [ 1, 6 ], [ 6, 7 ] ]</td>
+<td>1518</td>
+<td></td>
+<td>258</td>
+<td></td>
+<td>0.16996</td>
+<td>1</td>
+<td>258,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(258,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 258, 2 ]*</td>
+<td>C2 x (C43 : C3)<br /><br />[ [ 1, 6 ], [ 3, 28 ] ]</td>
+<td>762</td>
+<td></td>
+<td>258</td>
+<td></td>
+<td>0.338583</td>
+<td>1</td>
+<td>258,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(258,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 258, 3 ]*</td>
+<td>C43 x S3<br /><br />[ [ 1, 86 ], [ 2, 43 ] ]</td>
+<td>430</td>
+<td></td>
+<td>344</td>
+<td></td>
+<td>0.8</td>
+<td>1.33333</td>
+<td>86,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(258,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := Group([ f1*f3, f2 ]);</tt><br />
+ <tt>T := Group([ f1*f3^2 ]);</tt><br />
+ <tt>U := Group([ f1 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 258, 4 ]*</td>
+<td>C3 x D86<br /><br />[ [ 1, 6 ], [ 2, 63 ] ]</td>
+<td>510</td>
+<td></td>
+<td>258</td>
+<td></td>
+<td>0.505882</td>
+<td>1</td>
+<td>258,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(258,4);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 258, 5 ]*</td>
+<td>D258<br /><br />[ [ 1, 2 ], [ 2, 64 ] ]</td>
+<td>514</td>
+<td></td>
+<td>344</td>
+<td></td>
+<td>0.669261</td>
+<td>1.33333</td>
+<td>86,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(258,5);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := Group([ f1*f2, f3 ]);</tt><br />
+ <tt>T := Group([ f1*f2^2*f3^41 ]);</tt><br />
+ <tt>U := Group([ f1*f3^41 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 1 ]*</td>
+<td>C13 x (C5 : C4)<br /><br />[ [ 1, 52 ], [ 2, 52 ] ]</td>
+<td>468</td>
+<td></td>
+<td>260</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>260,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(260,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 2 ]*</td>
+<td>C5 x (C13 : C4)<br /><br />[ [ 1, 20 ], [ 2, 60 ] ]</td>
+<td>500</td>
+<td></td>
+<td>260</td>
+<td></td>
+<td>0.52</td>
+<td>1</td>
+<td>260,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(260,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 3 ]*</td>
+<td>C65 : C4<br /><br />[ [ 1, 4 ], [ 2, 64 ] ]</td>
+<td>516</td>
+<td></td>
+<td>260</td>
+<td></td>
+<td>0.503876</td>
+<td>1</td>
+<td>260,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(260,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 5 ]*</td>
+<td>C5 x (C13 : C4)<br /><br />[ [ 1, 20 ], [ 4, 15 ] ]</td>
+<td>980</td>
+<td></td>
+<td>320</td>
+<td></td>
+<td>0.326531</td>
+<td>1.23077</td>
+<td>20,4,4</td>
+<td></td>
+<td><tt>G := SmallGroup(260,5);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f4^7, f2, f3*f4^11 ]);</tt><br />
+ <tt>T := Group([ f1*f4, f3*f4^9 ]);</tt><br />
+ <tt>U := Group([ f1*f4^8, f3*f4^7 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 6 ]*</td>
+<td>C65 : C4<br /><br />[ [ 1, 4 ], [ 2, 4 ], [ 4, 15 ] ]</td>
+<td>996</td>
+<td></td>
+<td>320</td>
+<td></td>
+<td>0.321285</td>
+<td>1.23077</td>
+<td>20,4,4</td>
+<td></td>
+<td><tt>G := SmallGroup(260,6);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f4^4, f2*f4^11, f3 ]);</tt><br />
+ <tt>T := Group([ f1*f3^3*f4^8, f2*f4^9 ]);</tt><br />
+ <tt>U := Group([ f1*f3^3*f4^12, f2*f4^7 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 7 ]*</td>
+<td>C13 x (C5 : C4)<br /><br />[ [ 1, 52 ], [ 4, 13 ] ]</td>
+<td>884</td>
+<td></td>
+<td>416</td>
+<td></td>
+<td>0.470588</td>
+<td>1.6</td>
+<td>52,4,2</td>
+<td></td>
+<td><tt>G := SmallGroup(260,7);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3*f4^3 ]);</tt><br />
+ <tt>T := Group([ f1*f4^2, f3*f4 ]);</tt><br />
+ <tt>U := Group([ f3*f4^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 8 ]*</td>
+<td>C65 : C4<br /><br />[ [ 1, 4 ], [ 2, 12 ], [ 4, 13 ] ]</td>
+<td>932</td>
+<td></td>
+<td>416</td>
+<td></td>
+<td>0.446352</td>
+<td>1.6</td>
+<td>52,4,2</td>
+<td></td>
+<td><tt>G := SmallGroup(260,8);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f3^2, f2*f3^3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f3^4*f4^11, f2*f3 ]);</tt><br />
+ <tt>U := Group([ f2*f3^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 9 ]*</td>
+<td>C65 : C4<br /><br />[ [ 1, 4 ], [ 4, 16 ] ]</td>
+<td>1028</td>
+<td></td>
+<td>416</td>
+<td></td>
+<td>0.404669</td>
+<td>1.6</td>
+<td>52,4,2</td>
+<td></td>
+<td><tt>G := SmallGroup(260,9);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f3, f2*f3^3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f3^2*f4^7, f2*f3*f4^11 ]);</tt><br />
+ <tt>U := Group([ f2*f3^2*f4^11 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 10 ]*</td>
+<td>C65 : C4<br /><br />[ [ 1, 4 ], [ 4, 16 ] ]</td>
+<td>1028</td>
+<td></td>
+<td>416</td>
+<td></td>
+<td>0.404669</td>
+<td>1.6</td>
+<td>52,4,2</td>
+<td></td>
+<td><tt>G := SmallGroup(260,10);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f3^2, f2*f3^3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f3^4*f4^7, f2*f3*f4^11 ]);</tt><br />
+ <tt>U := Group([ f2*f3^2*f4^11 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 11 ]*</td>
+<td>D10 x D26<br /><br />[ [ 1, 4 ], [ 2, 16 ], [ 4, 12 ] ]</td>
+<td>900</td>
+<td></td>
+<td>260</td>
+<td></td>
+<td>0.288889</td>
+<td>1</td>
+<td>260,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(260,11);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 12 ]*</td>
+<td>C10 x D26<br /><br />[ [ 1, 20 ], [ 2, 60 ] ]</td>
+<td>500</td>
+<td></td>
+<td>260</td>
+<td></td>
+<td>0.52</td>
+<td>1</td>
+<td>260,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(260,12);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 13 ]*</td>
+<td>C26 x D10<br /><br />[ [ 1, 52 ], [ 2, 52 ] ]</td>
+<td>468</td>
+<td></td>
+<td>260</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>260,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(260,13);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 260, 14 ]*</td>
+<td>D260<br /><br />[ [ 1, 4 ], [ 2, 64 ] ]</td>
+<td>516</td>
+<td></td>
+<td>260</td>
+<td></td>
+<td>0.503876</td>
+<td>1</td>
+<td>260,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(260,14);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 262, 1 ]*</td>
+<td>D262<br /><br />[ [ 1, 2 ], [ 2, 65 ] ]</td>
+<td>522</td>
+<td></td>
+<td>262</td>
+<td></td>
+<td>0.501916</td>
+<td>1</td>
+<td>262,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(262,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 1 ]*</td>
+<td>C11 x (C3 : C8)<br /><br />[ [ 1, 88 ], [ 2, 44 ] ]</td>
+<td>440</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.6</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 2 ]*</td>
+<td>C3 x (C11 : C8)<br /><br />[ [ 1, 24 ], [ 2, 60 ] ]</td>
+<td>504</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.52381</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 3 ]*</td>
+<td>C33 : C8<br /><br />[ [ 1, 8 ], [ 2, 64 ] ]</td>
+<td>520</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.507692</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 5 ]*</td>
+<td>(C3 : C4) x D22<br /><br />[ [ 1, 8 ], [ 2, 24 ], [ 4, 10 ] ]</td>
+<td>840</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.314286</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,5);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 6 ]*</td>
+<td>S3 x (C11 : C4)<br /><br />[ [ 1, 8 ], [ 2, 24 ], [ 4, 10 ] ]</td>
+<td>840</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.419048</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,6);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f4, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f2*f3*f4^2 ]);</tt><br />
+ <tt>U := Group([ f2*f3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 7 ]*</td>
+<td>(C11 x (C3 : C4)) : C2<br /><br />[ [ 1, 8 ], [ 2, 24 ], [ 4, 10 ] ]</td>
+<td>840</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.419048</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,7);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f4, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f3*f4^2*f5^9 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f3*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 8 ]*</td>
+<td>(C22 x S3) : C2<br /><br />[ [ 1, 4 ], [ 2, 25 ], [ 4, 10 ] ]</td>
+<td>844</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.417062</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,8);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f4, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f2*f3*f4^2 ]);</tt><br />
+ <tt>U := Group([ f2*f3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 9 ]*</td>
+<td>(C6 x D22) : C2<br /><br />[ [ 1, 4 ], [ 2, 25 ], [ 4, 10 ] ]</td>
+<td>844</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.417062</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,9);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f4, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f3*f4^2*f5^9 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f3*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 10 ]*</td>
+<td>(C22 x S3) : C2<br /><br />[ [ 1, 4 ], [ 2, 25 ], [ 4, 10 ] ]</td>
+<td>844</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.417062</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,10);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f4, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f3*f4^2*f5^9 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f3*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 11 ]*</td>
+<td>C33 : Q8<br /><br />[ [ 1, 4 ], [ 2, 25 ], [ 4, 10 ] ]</td>
+<td>844</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.312796</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,11);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 12 ]*</td>
+<td>C11 x SL(2,3)<br /><br />[ [ 1, 33 ], [ 2, 33 ], [ 3, 11 ] ]</td>
+<td>594</td>
+<td></td>
+<td>396</td>
+<td></td>
+<td>0.666667</td>
+<td>1.5</td>
+<td>44,3,3</td>
+<td></td>
+<td><tt>G := SmallGroup(264,12);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f4 ]);</tt><br />
+ <tt>U := Group([ f1*f3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 13 ]*</td>
+<td>C3 x (C11 : Q8)<br /><br />[ [ 1, 12 ], [ 2, 63 ] ]</td>
+<td>516</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.511628</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,13);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 14 ]*</td>
+<td>C12 x D22<br /><br />[ [ 1, 24 ], [ 2, 60 ] ]</td>
+<td>504</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.52381</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,14);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 15 ]*</td>
+<td>C3 x D88<br /><br />[ [ 1, 12 ], [ 2, 63 ] ]</td>
+<td>516</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.511628</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,15);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 16 ]*</td>
+<td>C6 x (C11 : C4)<br /><br />[ [ 1, 24 ], [ 2, 60 ] ]</td>
+<td>504</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.52381</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,16);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 17 ]*</td>
+<td>C3 x ((C22 x C2) : C2)<br /><br />[ [ 1, 12 ], [ 2, 63 ] ]</td>
+<td>516</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.511628</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,17);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 18 ]*</td>
+<td>C11 x (C3 : Q8)<br /><br />[ [ 1, 44 ], [ 2, 55 ] ]</td>
+<td>484</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.545455</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,18);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 19 ]*</td>
+<td>C44 x S3<br /><br />[ [ 1, 88 ], [ 2, 44 ] ]</td>
+<td>440</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.8</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,19);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f2, f3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f4*f5^2 ]);</tt><br />
+ <tt>U := Group([ f1*f4 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 20 ]*</td>
+<td>C11 x D24<br /><br />[ [ 1, 44 ], [ 2, 55 ] ]</td>
+<td>484</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.727273</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,20);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f2, f3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f4*f5^2 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f4 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 21 ]*</td>
+<td>C22 x (C3 : C4)<br /><br />[ [ 1, 88 ], [ 2, 44 ] ]</td>
+<td>440</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.6</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,21);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 22 ]*</td>
+<td>C11 x ((C6 x C2) : C2)<br /><br />[ [ 1, 44 ], [ 2, 55 ] ]</td>
+<td>484</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.727273</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,22);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f2, f3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f4*f5^2 ]);</tt><br />
+ <tt>U := Group([ f1*f4 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 23 ]*</td>
+<td>C33 : Q8<br /><br />[ [ 1, 4 ], [ 2, 65 ] ]</td>
+<td>524</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.503817</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,23);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 24 ]*</td>
+<td>C4 x D66<br /><br />[ [ 1, 8 ], [ 2, 64 ] ]</td>
+<td>520</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.676923</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,24);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3*f4^2*f5^9 ]);</tt><br />
+ <tt>U := Group([ f1*f3*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 25 ]*</td>
+<td>D264<br /><br />[ [ 1, 4 ], [ 2, 65 ] ]</td>
+<td>524</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.671756</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,25);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f3*f4^2*f5^9 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f3*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 26 ]*</td>
+<td>C2 x (C33 : C4)<br /><br />[ [ 1, 8 ], [ 2, 64 ] ]</td>
+<td>520</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.507692</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,26);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 27 ]*</td>
+<td>(C66 x C2) : C2<br /><br />[ [ 1, 4 ], [ 2, 65 ] ]</td>
+<td>524</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.671756</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,27);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3*f4^2*f5^9 ]);</tt><br />
+ <tt>U := Group([ f1*f3*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 29 ]*</td>
+<td>C33 x D8<br /><br />[ [ 1, 132 ], [ 2, 33 ] ]</td>
+<td>396</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,29);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 30 ]*</td>
+<td>C33 x Q8<br /><br />[ [ 1, 132 ], [ 2, 33 ] ]</td>
+<td>396</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,30);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 31 ]*</td>
+<td>C11 x S4<br /><br />[ [ 1, 22 ], [ 2, 11 ], [ 3, 22 ] ]</td>
+<td>704</td>
+<td></td>
+<td>396</td>
+<td></td>
+<td>0.5625</td>
+<td>1.5</td>
+<td>66,3,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,31);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2, f3*f5 ]);</tt><br />
+ <tt>T := Group([ f3*f4 ]);</tt><br />
+ <tt>U := Group([ f1*f3^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 32 ]*</td>
+<td>(C11 x A4) : C2<br /><br />[ [ 1, 2 ], [ 2, 16 ], [ 3, 2 ], [ 6, 5 ] ]</td>
+<td>1264</td>
+<td></td>
+<td>396</td>
+<td></td>
+<td>0.313291</td>
+<td>1.5</td>
+<td>66,3,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,32);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f5, f3 ]);</tt><br />
+ <tt>T := Group([ f2*f4 ]);</tt><br />
+ <tt>U := Group([ f1*f2^2*f3^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 33 ]*</td>
+<td>A4 x D22<br /><br />[ [ 1, 6 ], [ 2, 15 ], [ 3, 2 ], [ 6, 5 ] ]</td>
+<td>1260</td>
+<td></td>
+<td>396</td>
+<td></td>
+<td>0.314286</td>
+<td>1.5</td>
+<td>66,3,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,33);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f3, f5 ]);</tt><br />
+ <tt>T := Group([ f2*f3*f4 ]);</tt><br />
+ <tt>U := Group([ f1*f3*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 34 ]*</td>
+<td>C2 x S3 x D22<br /><br />[ [ 1, 8 ], [ 2, 24 ], [ 4, 10 ] ]</td>
+<td>840</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.419048</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,34);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f4, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f2*f4^2 ]);</tt><br />
+ <tt>U := Group([ f2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 35 ]*</td>
+<td>C22 x A4<br /><br />[ [ 1, 66 ], [ 3, 22 ] ]</td>
+<td>660</td>
+<td></td>
+<td>396</td>
+<td></td>
+<td>0.6</td>
+<td>1.5</td>
+<td>66,3,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,35);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f5, f3 ]);</tt><br />
+ <tt>T := Group([ f2*f4 ]);</tt><br />
+ <tt>U := Group([ f1*f4 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 36 ]*</td>
+<td>C2 x C6 x D22<br /><br />[ [ 1, 24 ], [ 2, 60 ] ]</td>
+<td>504</td>
+<td></td>
+<td>264</td>
+<td></td>
+<td>0.52381</td>
+<td>1</td>
+<td>264,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(264,36);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 37 ]*</td>
+<td>C2 x C22 x S3<br /><br />[ [ 1, 88 ], [ 2, 44 ] ]</td>
+<td>440</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.8</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,37);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f2, f3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f3*f5^2 ]);</tt><br />
+ <tt>U := Group([ f1*f3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 264, 38 ]*</td>
+<td>C2 x C2 x D66<br /><br />[ [ 1, 8 ], [ 2, 64 ] ]</td>
+<td>520</td>
+<td></td>
+<td>352</td>
+<td></td>
+<td>0.676923</td>
+<td>1.33333</td>
+<td>88,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(264,38);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3*f4^2*f5^9 ]);</tt><br />
+ <tt>U := Group([ f1*f3*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 266, 1 ]*</td>
+<td>C19 x D14<br /><br />[ [ 1, 38 ], [ 2, 57 ] ]</td>
+<td>494</td>
+<td></td>
+<td>266</td>
+<td></td>
+<td>0.538462</td>
+<td>1</td>
+<td>266,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(266,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 266, 2 ]*</td>
+<td>C7 x D38<br /><br />[ [ 1, 14 ], [ 2, 63 ] ]</td>
+<td>518</td>
+<td></td>
+<td>266</td>
+<td></td>
+<td>0.513514</td>
+<td>1</td>
+<td>266,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(266,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 266, 3 ]*</td>
+<td>D266<br /><br />[ [ 1, 2 ], [ 2, 66 ] ]</td>
+<td>530</td>
+<td></td>
+<td>266</td>
+<td></td>
+<td>0.501887</td>
+<td>1</td>
+<td>266,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(266,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 268, 1 ]*</td>
+<td>C67 : C4<br /><br />[ [ 1, 4 ], [ 2, 66 ] ]</td>
+<td>532</td>
+<td></td>
+<td>268</td>
+<td></td>
+<td>0.503759</td>
+<td>1</td>
+<td>268,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(268,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 268, 3 ]*</td>
+<td>D268<br /><br />[ [ 1, 4 ], [ 2, 66 ] ]</td>
+<td>532</td>
+<td></td>
+<td>268</td>
+<td></td>
+<td>0.503759</td>
+<td>1</td>
+<td>268,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(268,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+
+
+
+
+<tr>
+<td>[ 270, 1 ]*</td>
+<td>C5 x D54<br /><br />[ [ 1, 10 ], [ 2, 65 ] ]</td>
+<td>530</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.679245</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f3*f4^2*f5, f2, f4, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3^2*f4 ]);</tt><br />
+ <tt>U := Group([ f1*f4 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 2 ]*</td>
+<td>C27 x D10<br /><br />[ [ 1, 54 ], [ 2, 54 ] ]</td>
+<td>486</td>
+<td></td>
+<td>270</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>270,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(270,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 3 ]*</td>
+<td>D270<br /><br />[ [ 1, 2 ], [ 2, 67 ] ]</td>
+<td>538</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.669145</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f2*f4^2*f5, f3, f4, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2^2*f3^3*f4 ]);</tt><br />
+ <tt>U := Group([ f1*f3^3*f4 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 5 ]*</td>
+<td>C3 x C9 x D10<br /><br />[ [ 1, 54 ], [ 2, 54 ] ]</td>
+<td>486</td>
+<td></td>
+<td>270</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>270,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(270,5);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 6 ]*</td>
+<td>((C3 x C3) : C3) x D10<br /><br />[ [ 1, 18 ], [ 2, 18 ], [ 3, 4 ], [ 6, 4 ] ]</td>
+<td>1134</td>
+<td></td>
+<td>270</td>
+<td></td>
+<td>0.238095</td>
+<td>1</td>
+<td>270,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(270,6);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 7 ]*</td>
+<td>(C9 : C3) x D10<br /><br />[ [ 1, 18 ], [ 2, 18 ], [ 3, 4 ], [ 6, 4 ] ]</td>
+<td>1134</td>
+<td></td>
+<td>270</td>
+<td></td>
+<td>0.238095</td>
+<td>1</td>
+<td>270,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(270,7);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 8 ]*</td>
+<td>C15 x D18<br /><br />[ [ 1, 30 ], [ 2, 60 ] ]</td>
+<td>510</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.705882</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,8);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4*f5^2, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f4^2*f5 ]);</tt><br />
+ <tt>U := Group([ f1*f5 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 9 ]*</td>
+<td>C45 x S3<br /><br />[ [ 1, 90 ], [ 2, 45 ] ]</td>
+<td>450</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.8</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,9);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f2, f3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f5^2 ]);</tt><br />
+ <tt>U := Group([ f1 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 10 ]*</td>
+<td>C5 x (((C3 x C3) : C3) : C2)<br /><br />[ [ 1, 30 ], [ 2, 15 ], [ 6, 5 ] ]</td>
+<td>1230</td>
+<td></td>
+<td>540</td>
+<td></td>
+<td>0.439024</td>
+<td>2</td>
+<td>30,6,3</td>
+<td></td>
+<td><tt>G := SmallGroup(270,10);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f3, f4*f5^2 ]);</tt><br />
+ <tt>T := Group([ f1*f4*f5, f2*f5 ]);</tt><br />
+ <tt>U := Group([ f2*f4^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 11 ]*</td>
+<td>C5 x ((C9 : C3) : C2)<br /><br />[ [ 1, 30 ], [ 2, 15 ], [ 6, 5 ] ]</td>
+<td>1230</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.292683</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,11);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4*f5^2, f2*f5, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f4^2*f5 ]);</tt><br />
+ <tt>U := Group([ f1*f5 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 12 ]*</td>
+<td>C3 x D90<br /><br />[ [ 1, 6 ], [ 2, 66 ] ]</td>
+<td>534</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.674157</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,12);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f3*f5^2, f2, f4, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3^2*f4^3*f5 ]);</tt><br />
+ <tt>U := Group([ f1*f4^3*f5 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 13 ]*</td>
+<td>C9 x D30<br /><br />[ [ 1, 18 ], [ 2, 63 ] ]</td>
+<td>522</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.689655</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,13);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f4^2*f5^3 ]);</tt><br />
+ <tt>U := Group([ f1*f5^3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 14 ]*</td>
+<td>(C5 x ((C3 x C3) : C3)) : C2<br /><br />[ [ 1, 6 ], [ 2, 21 ], [ 6, 5 ] ]</td>
+<td>1254</td>
+<td></td>
+<td>540</td>
+<td></td>
+<td>0.430622</td>
+<td>2</td>
+<td>30,6,3</td>
+<td></td>
+<td><tt>G := SmallGroup(270,14);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f3*f4, f2*f4, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f4*f5^3, f3*f4^2 ]);</tt><br />
+ <tt>U := Group([ f2*f3^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 15 ]*</td>
+<td>(C5 x (C9 : C3)) : C2<br /><br />[ [ 1, 6 ], [ 2, 21 ], [ 6, 5 ] ]</td>
+<td>1254</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.287081</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,15);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f3*f5^2, f2*f5, f4, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3^2*f4^3*f5 ]);</tt><br />
+ <tt>U := Group([ f1*f4^3*f5 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 16 ]*</td>
+<td>C5 x ((C9 x C3) : C2)<br /><br />[ [ 1, 10 ], [ 2, 65 ] ]</td>
+<td>530</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.679245</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,16);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3*f4^2 ]);</tt><br />
+ <tt>U := Group([ f1*f3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 17 ]*</td>
+<td>C5 x (((C3 x C3) : C3) : C2)<br /><br />[ [ 1, 10 ], [ 2, 20 ], [ 3, 20 ] ]</td>
+<td>710</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.507042</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,17);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3*f4*f5, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3^2*f4*f5 ]);</tt><br />
+ <tt>U := Group([ f1*f3*f4*f5^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 18 ]*</td>
+<td>(C45 x C3) : C2<br /><br />[ [ 1, 2 ], [ 2, 67 ] ]</td>
+<td>538</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.669145</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,18);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f3, f2*f3^2, f4, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f3*f4^3 ]);</tt><br />
+ <tt>U := Group([ f1*f2^2*f3*f4^3*f5 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 19 ]*</td>
+<td>(C5 x ((C3 x C3) : C3)) : C2<br /><br />[ [ 1, 2 ], [ 2, 22 ], [ 3, 4 ], [ 6, 4 ] ]</td>
+<td>1150</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.313043</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,19);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f3, f2*f3^2*f5, f4, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2^2*f3*f4^3*f5 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f3*f4^3*f5^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 21 ]*</td>
+<td>C10 x ((C3 x C3) : C3)<br /><br />[ [ 1, 90 ], [ 3, 20 ] ]</td>
+<td>630</td>
+<td></td>
+<td>270</td>
+<td></td>
+<td>0.428571</td>
+<td>1</td>
+<td>270,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(270,21);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 22 ]*</td>
+<td>C10 x (C9 : C3)<br /><br />[ [ 1, 90 ], [ 3, 20 ] ]</td>
+<td>630</td>
+<td></td>
+<td>270</td>
+<td></td>
+<td>0.428571</td>
+<td>1</td>
+<td>270,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(270,22);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 23 ]*</td>
+<td>C3 x C3 x C3 x D10<br /><br />[ [ 1, 54 ], [ 2, 54 ] ]</td>
+<td>486</td>
+<td></td>
+<td>270</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>270,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(270,23);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 24 ]*</td>
+<td>C3 x C15 x S3<br /><br />[ [ 1, 90 ], [ 2, 45 ] ]</td>
+<td>450</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.8</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,24);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f2, f3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f5^2 ]);</tt><br />
+ <tt>U := Group([ f1 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 25 ]*</td>
+<td>C3 x C3 x D30<br /><br />[ [ 1, 18 ], [ 2, 63 ] ]</td>
+<td>522</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.689655</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,25);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f4^2*f5^3 ]);</tt><br />
+ <tt>U := Group([ f1*f5^3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 26 ]*</td>
+<td>C15 x ((C3 x C3) : C2)<br /><br />[ [ 1, 30 ], [ 2, 60 ] ]</td>
+<td>510</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.705882</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,26);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f2, f3, f4*f5^2 ]);</tt><br />
+ <tt>T := Group([ f1*f4*f5 ]);</tt><br />
+ <tt>U := Group([ f1*f4^2*f5 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 27 ]*</td>
+<td>C3 x ((C15 x C3) : C2)<br /><br />[ [ 1, 6 ], [ 2, 66 ] ]</td>
+<td>534</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.674157</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,27);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3*f4^2, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3*f4*f5^3 ]);</tt><br />
+ <tt>U := Group([ f1*f3^2*f4*f5^3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 28 ]*</td>
+<td>C5 x ((C3 x C3 x C3) : C2)<br /><br />[ [ 1, 10 ], [ 2, 65 ] ]</td>
+<td>530</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.679245</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,28);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f3*f4^2*f5 ]);</tt><br />
+ <tt>U := Group([ f1*f3*f5 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 270, 29 ]*</td>
+<td>(C15 x C3 x C3) : C2<br /><br />[ [ 1, 2 ], [ 2, 67 ] ]</td>
+<td>538</td>
+<td></td>
+<td>360</td>
+<td></td>
+<td>0.669145</td>
+<td>1.33333</td>
+<td>90,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(270,29);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4, f2*f4, f3*f4, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f3*f4*f5^3 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f3*f4^2*f5^3 ]);</tt></td>
+</tr>
+
+
+
+
+
+
+<tr>
+<td>[ 272, 1 ]*</td>
+<td>C17 : C16<br /><br />[ [ 1, 16 ], [ 2, 64 ] ]</td>
+<td>528</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.515152</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 3 ]*</td>
+<td>C17 : C16<br /><br />[ [ 1, 16 ], [ 4, 16 ] ]</td>
+<td>1040</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.261538</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 4 ]*</td>
+<td>C8 x D34<br /><br />[ [ 1, 16 ], [ 2, 64 ] ]</td>
+<td>528</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.515152</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,4);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 5 ]*</td>
+<td>C136 : C2<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,5);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 6 ]*</td>
+<td>C136 : C2<br /><br />[ [ 1, 4 ], [ 2, 67 ] ]</td>
+<td>540</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.503704</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,6);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 7 ]*</td>
+<td>D272<br /><br />[ [ 1, 4 ], [ 2, 67 ] ]</td>
+<td>540</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.503704</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,7);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 8 ]*</td>
+<td>C17 : Q16<br /><br />[ [ 1, 4 ], [ 2, 67 ] ]</td>
+<td>540</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.503704</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,8);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 9 ]*</td>
+<td>C2 x (C17 : C8)<br /><br />[ [ 1, 16 ], [ 2, 64 ] ]</td>
+<td>528</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.515152</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,9);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 10 ]*</td>
+<td>(C17 : C8) : C2<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,10);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 11 ]*</td>
+<td>C4 x (C17 : C4)<br /><br />[ [ 1, 16 ], [ 2, 64 ] ]</td>
+<td>528</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.515152</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,11);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 12 ]*</td>
+<td>(C17 : C4) : C4<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,12);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 13 ]*</td>
+<td>C68 : C4<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,13);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 14 ]*</td>
+<td>(C68 x C2) : C2<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,14);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 15 ]*</td>
+<td>(C17 x D8) : C2<br /><br />[ [ 1, 4 ], [ 2, 35 ], [ 4, 8 ] ]</td>
+<td>796</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.341709</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,15);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 16 ]*</td>
+<td>(C17 : C8) : C2<br /><br />[ [ 1, 4 ], [ 2, 35 ], [ 4, 8 ] ]</td>
+<td>796</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.341709</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,16);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 17 ]*</td>
+<td>(C17 x Q8) : C2<br /><br />[ [ 1, 4 ], [ 2, 35 ], [ 4, 8 ] ]</td>
+<td>796</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.341709</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,17);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 18 ]*</td>
+<td>C17 : Q16<br /><br />[ [ 1, 4 ], [ 2, 35 ], [ 4, 8 ] ]</td>
+<td>796</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.341709</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,18);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 19 ]*</td>
+<td>(C2 x (C17 : C4)) : C2<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,19);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 21 ]*</td>
+<td>C17 x ((C4 x C2) : C2)<br /><br />[ [ 1, 136 ], [ 2, 34 ] ]</td>
+<td>408</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,21);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 22 ]*</td>
+<td>C17 x (C4 : C4)<br /><br />[ [ 1, 136 ], [ 2, 34 ] ]</td>
+<td>408</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,22);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 24 ]*</td>
+<td>C17 x (C8 : C2)<br /><br />[ [ 1, 136 ], [ 2, 34 ] ]</td>
+<td>408</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,24);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 25 ]*</td>
+<td>C17 x D16<br /><br />[ [ 1, 68 ], [ 2, 51 ] ]</td>
+<td>476</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.571429</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,25);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 26 ]*</td>
+<td>C17 x QD16<br /><br />[ [ 1, 68 ], [ 2, 51 ] ]</td>
+<td>476</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.571429</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,26);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 27 ]*</td>
+<td>C17 x Q16<br /><br />[ [ 1, 68 ], [ 2, 51 ] ]</td>
+<td>476</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.571429</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,27);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 28 ]*</td>
+<td>C17 : C16<br /><br />[ [ 1, 16 ], [ 8, 4 ] ]</td>
+<td>2064</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.131783</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,28);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 29 ]*</td>
+<td>(C17 : C8) : C2<br /><br />[ [ 1, 16 ], [ 4, 16 ] ]</td>
+<td>1040</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.261538</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,29);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 30 ]*</td>
+<td>(C17 : C8) : C2<br /><br />[ [ 1, 8 ], [ 2, 2 ], [ 4, 16 ] ]</td>
+<td>1048</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.259542</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,30);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 31 ]*</td>
+<td>C4 x (C17 : C4)<br /><br />[ [ 1, 16 ], [ 4, 16 ] ]</td>
+<td>1040</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.261538</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,31);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 32 ]*</td>
+<td>C68 : C4<br /><br />[ [ 1, 8 ], [ 2, 2 ], [ 4, 16 ] ]</td>
+<td>1048</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.259542</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,32);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 33 ]*</td>
+<td>C2 x (C17 : C8)<br /><br />[ [ 1, 16 ], [ 4, 16 ] ]</td>
+<td>1040</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.261538</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,33);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 34 ]*</td>
+<td>(C17 : C8) : C2<br /><br />[ [ 1, 8 ], [ 2, 2 ], [ 4, 16 ] ]</td>
+<td>1048</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.259542</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,34);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 35 ]*</td>
+<td>(C2 x (C17 : C4)) : C2<br /><br />[ [ 1, 8 ], [ 2, 2 ], [ 4, 16 ] ]</td>
+<td>1048</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.259542</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,35);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 36 ]*</td>
+<td>C2 x (C17 : Q8)<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,36);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 37 ]*</td>
+<td>C2 x C4 x D34<br /><br />[ [ 1, 16 ], [ 2, 64 ] ]</td>
+<td>528</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.515152</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,37);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 38 ]*</td>
+<td>C2 x D136<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,38);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 39 ]*</td>
+<td>(C68 x C2) : C2<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,39);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 40 ]*</td>
+<td>D8 x D34<br /><br />[ [ 1, 8 ], [ 2, 34 ], [ 4, 8 ] ]</td>
+<td>792</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.343434</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,40);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 41 ]*</td>
+<td>(C2 x (C17 : C4)) : C2<br /><br />[ [ 1, 8 ], [ 2, 34 ], [ 4, 8 ] ]</td>
+<td>792</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.343434</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,41);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 42 ]*</td>
+<td>Q8 x D34<br /><br />[ [ 1, 8 ], [ 2, 34 ], [ 4, 8 ] ]</td>
+<td>792</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.343434</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,42);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 43 ]*</td>
+<td>(C4 x D34) : C2<br /><br />[ [ 1, 8 ], [ 2, 34 ], [ 4, 8 ] ]</td>
+<td>792</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.343434</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,43);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 44 ]*</td>
+<td>C2 x C2 x (C17 : C4)<br /><br />[ [ 1, 16 ], [ 2, 64 ] ]</td>
+<td>528</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.515152</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,44);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 45 ]*</td>
+<td>C2 x ((C34 x C2) : C2)<br /><br />[ [ 1, 8 ], [ 2, 66 ] ]</td>
+<td>536</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.507463</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,45);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 47 ]*</td>
+<td>C34 x D8<br /><br />[ [ 1, 136 ], [ 2, 34 ] ]</td>
+<td>408</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,47);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 48 ]*</td>
+<td>C34 x Q8<br /><br />[ [ 1, 136 ], [ 2, 34 ] ]</td>
+<td>408</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,48);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 49 ]*</td>
+<td>C17 x ((C4 x C2) : C2)<br /><br />[ [ 1, 136 ], [ 2, 34 ] ]</td>
+<td>408</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,49);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 50 ]*</td>
+<td>C17 : C16<br /><br />[ [ 1, 16 ], [ 16, 1 ] ]</td>
+<td>4112</td>
+<td></td>
+<td>512</td>
+<td></td>
+<td>0.124514</td>
+<td>1.88235</td>
+<td>16,16,2</td>
+<td></td>
+<td><tt>G := SmallGroup(272,50);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5^2, f2*f5^8, f3*f5^12, f4*f5^15 ]);</tt><br />
+ <tt>T := Group([ f1*f5^4, f2*f5^16, f3*f5^7, f4*f5^13 ]);</tt><br />
+ <tt>U := Group([ f4*f5^14 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 51 ]*</td>
+<td>C2 x (C17 : C8)<br /><br />[ [ 1, 16 ], [ 8, 4 ] ]</td>
+<td>2064</td>
+<td></td>
+<td>512</td>
+<td></td>
+<td>0.248062</td>
+<td>1.88235</td>
+<td>16,8,4</td>
+<td></td>
+<td><tt>G := SmallGroup(272,51);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5^8, f2, f3*f5^12, f4*f5^15 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f5^16, f3*f5^7, f4*f5^13 ]);</tt><br />
+ <tt>U := Group([ f2*f3*f5^14, f4*f5^9 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 52 ]*</td>
+<td>C2 x C2 x (C17 : C4)<br /><br />[ [ 1, 16 ], [ 4, 16 ] ]</td>
+<td>1040</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.261538</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,52);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 272, 53 ]*</td>
+<td>C2 x C2 x C2 x D34<br /><br />[ [ 1, 16 ], [ 2, 64 ] ]</td>
+<td>528</td>
+<td></td>
+<td>272</td>
+<td></td>
+<td>0.515152</td>
+<td>1</td>
+<td>272,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(272,53);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+
+
+<tr>
+<td>[ 273, 1 ]*</td>
+<td>C13 x (C7 : C3)<br /><br />[ [ 1, 39 ], [ 3, 26 ] ]</td>
+<td>741</td>
+<td></td>
+<td>351</td>
+<td></td>
+<td>0.473684</td>
+<td>1.28571</td>
+<td>39,3,3</td>
+<td></td>
+<td><tt>G := SmallGroup(273,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := Group([ f1*f3, f2 ]);</tt><br />
+ <tt>T := Group([ f1*f3^2 ]);</tt><br />
+ <tt>U := Group([ f1*f3^3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 273, 2 ]*</td>
+<td>C7 x (C13 : C3)<br /><br />[ [ 1, 21 ], [ 3, 28 ] ]</td>
+<td>777</td>
+<td></td>
+<td>273</td>
+<td></td>
+<td>0.351351</td>
+<td>1</td>
+<td>273,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(273,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 273, 3 ]*</td>
+<td>C91 : C3<br /><br />[ [ 1, 3 ], [ 3, 30 ] ]</td>
+<td>813</td>
+<td></td>
+<td>351</td>
+<td></td>
+<td>0.431734</td>
+<td>1.28571</td>
+<td>39,3,3</td>
+<td></td>
+<td><tt>G := SmallGroup(273,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := Group([ f1*f2, f3 ]);</tt><br />
+ <tt>T := Group([ f1*f2^2*f3^2 ]);</tt><br />
+ <tt>U := Group([ f1*f2^3*f3^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 273, 4 ]*</td>
+<td>C91 : C3<br /><br />[ [ 1, 3 ], [ 3, 30 ] ]</td>
+<td>813</td>
+<td></td>
+<td>351</td>
+<td></td>
+<td>0.431734</td>
+<td>1.28571</td>
+<td>39,3,3</td>
+<td></td>
+<td><tt>G := SmallGroup(273,4);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := Group([ f1*f2^3, f3 ]);</tt><br />
+ <tt>T := Group([ f1*f2^6*f3^2 ]);</tt><br />
+ <tt>U := Group([ f1*f2^2*f3^2 ]);</tt></td>
+</tr>
+
+
+<tr>
+<td>[ 274, 1 ]*</td>
+<td>D274<br /><br />[ [ 1, 2 ], [ 2, 68 ] ]</td>
+<td>546</td>
+<td></td>
+<td>274</td>
+<td></td>
+<td>0.501832</td>
+<td>1</td>
+<td>274,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(274,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 275, 1 ]*</td>
+<td>C11 : C25<br /><br />[ [ 1, 25 ], [ 5, 10 ] ]</td>
+<td>1275</td>
+<td></td>
+<td>275</td>
+<td></td>
+<td>0.215686</td>
+<td>1</td>
+<td>275,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(275,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 275, 3 ]*</td>
+<td>C5 x (C11 : C5)<br /><br />[ [ 1, 25 ], [ 5, 10 ] ]</td>
+<td>1275</td>
+<td></td>
+<td>275</td>
+<td></td>
+<td>0.215686</td>
+<td>1</td>
+<td>275,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(275,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 276, 1 ]*</td>
+<td>C23 x (C3 : C4)<br /><br />[ [ 1, 92 ], [ 2, 46 ] ]</td>
+<td>460</td>
+<td></td>
+<td>276</td>
+<td></td>
+<td>0.6</td>
+<td>1</td>
+<td>276,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(276,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 276, 2 ]*</td>
+<td>C3 x (C23 : C4)<br /><br />[ [ 1, 12 ], [ 2, 66 ] ]</td>
+<td>540</td>
+<td></td>
+<td>276</td>
+<td></td>
+<td>0.511111</td>
+<td>1</td>
+<td>276,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(276,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 276, 3 ]*</td>
+<td>C69 : C4<br /><br />[ [ 1, 4 ], [ 2, 68 ] ]</td>
+<td>548</td>
+<td></td>
+<td>276</td>
+<td></td>
+<td>0.50365</td>
+<td>1</td>
+<td>276,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(276,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 276, 5 ]*</td>
+<td>S3 x D46<br /><br />[ [ 1, 4 ], [ 2, 24 ], [ 4, 11 ] ]</td>
+<td>900</td>
+<td></td>
+<td>368</td>
+<td></td>
+<td>0.408889</td>
+<td>1.33333</td>
+<td>92,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(276,5);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1, f2*f3, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f3^2*f4^21 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f4^21 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 276, 6 ]*</td>
+<td>C23 x A4<br /><br />[ [ 1, 69 ], [ 3, 23 ] ]</td>
+<td>690</td>
+<td></td>
+<td>414</td>
+<td></td>
+<td>0.6</td>
+<td>1.5</td>
+<td>69,3,2</td>
+<td></td>
+<td><tt>G := SmallGroup(276,6);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f4, f2 ]);</tt><br />
+ <tt>T := Group([ f1*f3 ]);</tt><br />
+ <tt>U := Group([ f3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 276, 7 ]*</td>
+<td>C6 x D46<br /><br />[ [ 1, 12 ], [ 2, 66 ] ]</td>
+<td>540</td>
+<td></td>
+<td>276</td>
+<td></td>
+<td>0.511111</td>
+<td>1</td>
+<td>276,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(276,7);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 276, 8 ]*</td>
+<td>C46 x S3<br /><br />[ [ 1, 92 ], [ 2, 46 ] ]</td>
+<td>460</td>
+<td></td>
+<td>368</td>
+<td></td>
+<td>0.8</td>
+<td>1.33333</td>
+<td>92,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(276,8);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f4, f2, f3 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f4^2 ]);</tt><br />
+ <tt>U := Group([ f1*f2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 276, 9 ]*</td>
+<td>D276<br /><br />[ [ 1, 4 ], [ 2, 68 ] ]</td>
+<td>548</td>
+<td></td>
+<td>368</td>
+<td></td>
+<td>0.671533</td>
+<td>1.33333</td>
+<td>92,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(276,9);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; </tt><br />
+ <tt>S := Group([ f1*f3, f2, f4 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f3^2*f4^21 ]);</tt><br />
+ <tt>U := Group([ f1*f2*f4^21 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 278, 1 ]*</td>
+<td>D278<br /><br />[ [ 1, 2 ], [ 2, 69 ] ]</td>
+<td>554</td>
+<td></td>
+<td>278</td>
+<td></td>
+<td>0.501805</td>
+<td>1</td>
+<td>278,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(278,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 279, 1 ]*</td>
+<td>C31 : C9<br /><br />[ [ 1, 9 ], [ 3, 30 ] ]</td>
+<td>819</td>
+<td></td>
+<td>279</td>
+<td></td>
+<td>0.340659</td>
+<td>1</td>
+<td>279,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(279,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 279, 3 ]*</td>
+<td>C3 x (C31 : C3)<br /><br />[ [ 1, 9 ], [ 3, 30 ] ]</td>
+<td>819</td>
+<td></td>
+<td>279</td>
+<td></td>
+<td>0.340659</td>
+<td>1</td>
+<td>279,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(279,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+
+
+
+<tr>
+<td>[ 280, 1 ]*</td>
+<td>C7 x (C5 : C8)<br /><br />[ [ 1, 56 ], [ 2, 56 ] ]</td>
+<td>504</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 2 ]*</td>
+<td>C5 x (C7 : C8)<br /><br />[ [ 1, 40 ], [ 2, 60 ] ]</td>
+<td>520</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.538462</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 3 ]*</td>
+<td>C35 : C8<br /><br />[ [ 1, 8 ], [ 2, 68 ] ]</td>
+<td>552</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.507246</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 5 ]*</td>
+<td>C7 x (C5 : C8)<br /><br />[ [ 1, 56 ], [ 4, 14 ] ]</td>
+<td>952</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.294118</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,5);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 6 ]*</td>
+<td>C35 : C8<br /><br />[ [ 1, 8 ], [ 2, 12 ], [ 4, 14 ] ]</td>
+<td>1000</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.28</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,6);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 7 ]*</td>
+<td>(C5 : C4) x D14<br /><br />[ [ 1, 8 ], [ 2, 20 ], [ 4, 12 ] ]</td>
+<td>936</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.299145</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,7);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 8 ]*</td>
+<td>D10 x (C7 : C4)<br /><br />[ [ 1, 8 ], [ 2, 20 ], [ 4, 12 ] ]</td>
+<td>936</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.299145</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,8);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 9 ]*</td>
+<td>(C7 x (C5 : C4)) : C2<br /><br />[ [ 1, 8 ], [ 2, 20 ], [ 4, 12 ] ]</td>
+<td>936</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.299145</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,9);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 10 ]*</td>
+<td>(C14 x D10) : C2<br /><br />[ [ 1, 4 ], [ 2, 21 ], [ 4, 12 ] ]</td>
+<td>940</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.297872</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,10);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 11 ]*</td>
+<td>(C10 x D14) : C2<br /><br />[ [ 1, 4 ], [ 2, 21 ], [ 4, 12 ] ]</td>
+<td>940</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.297872</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,11);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 12 ]*</td>
+<td>(C14 x D10) : C2<br /><br />[ [ 1, 4 ], [ 2, 21 ], [ 4, 12 ] ]</td>
+<td>940</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.297872</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,12);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 13 ]*</td>
+<td>C35 : Q8<br /><br />[ [ 1, 4 ], [ 2, 21 ], [ 4, 12 ] ]</td>
+<td>940</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.297872</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,13);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 14 ]*</td>
+<td>C5 x (C7 : Q8)<br /><br />[ [ 1, 20 ], [ 2, 65 ] ]</td>
+<td>540</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.518519</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,14);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 15 ]*</td>
+<td>C20 x D14<br /><br />[ [ 1, 40 ], [ 2, 60 ] ]</td>
+<td>520</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.538462</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,15);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 16 ]*</td>
+<td>C5 x D56<br /><br />[ [ 1, 20 ], [ 2, 65 ] ]</td>
+<td>540</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.518519</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,16);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 17 ]*</td>
+<td>C10 x (C7 : C4)<br /><br />[ [ 1, 40 ], [ 2, 60 ] ]</td>
+<td>520</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.538462</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,17);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 18 ]*</td>
+<td>C5 x ((C14 x C2) : C2)<br /><br />[ [ 1, 20 ], [ 2, 65 ] ]</td>
+<td>540</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.518519</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,18);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 19 ]*</td>
+<td>C7 x (C5 : Q8)<br /><br />[ [ 1, 28 ], [ 2, 63 ] ]</td>
+<td>532</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.526316</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,19);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 20 ]*</td>
+<td>C28 x D10<br /><br />[ [ 1, 56 ], [ 2, 56 ] ]</td>
+<td>504</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,20);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 21 ]*</td>
+<td>C7 x D40<br /><br />[ [ 1, 28 ], [ 2, 63 ] ]</td>
+<td>532</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.526316</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,21);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 22 ]*</td>
+<td>C14 x (C5 : C4)<br /><br />[ [ 1, 56 ], [ 2, 56 ] ]</td>
+<td>504</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,22);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 23 ]*</td>
+<td>C7 x ((C10 x C2) : C2)<br /><br />[ [ 1, 28 ], [ 2, 63 ] ]</td>
+<td>532</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.526316</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,23);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 24 ]*</td>
+<td>C35 : Q8<br /><br />[ [ 1, 4 ], [ 2, 69 ] ]</td>
+<td>556</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.503597</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,24);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 25 ]*</td>
+<td>C4 x D70<br /><br />[ [ 1, 8 ], [ 2, 68 ] ]</td>
+<td>552</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.507246</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,25);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 26 ]*</td>
+<td>D280<br /><br />[ [ 1, 4 ], [ 2, 69 ] ]</td>
+<td>556</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.503597</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,26);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 27 ]*</td>
+<td>C2 x (C35 : C4)<br /><br />[ [ 1, 8 ], [ 2, 68 ] ]</td>
+<td>552</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.507246</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,27);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 28 ]*</td>
+<td>(C70 x C2) : C2<br /><br />[ [ 1, 4 ], [ 2, 69 ] ]</td>
+<td>556</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.503597</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,28);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 30 ]*</td>
+<td>C35 x D8<br /><br />[ [ 1, 140 ], [ 2, 35 ] ]</td>
+<td>420</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,30);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 31 ]*</td>
+<td>C35 x Q8<br /><br />[ [ 1, 140 ], [ 2, 35 ] ]</td>
+<td>420</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.666667</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,31);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 32 ]*</td>
+<td>(C5 : C4) x D14<br /><br />[ [ 1, 8 ], [ 2, 12 ], [ 4, 2 ], [ 8, 3 ] ]</td>
+<td>1768</td>
+<td></td>
+<td>448</td>
+<td></td>
+<td>0.253394</td>
+<td>1.6</td>
+<td>56,4,2</td>
+<td></td>
+<td><tt>G := SmallGroup(280,32);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f4, f3*f4^3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f4^2*f5^5, f3*f4 ]);</tt><br />
+ <tt>U := Group([ f1*f3*f4^2*f5^5 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 33 ]*</td>
+<td>C5 x ((C2 x C2 x C2) : C7)<br /><br />[ [ 1, 35 ], [ 7, 5 ] ]</td>
+<td>1750</td>
+<td></td>
+<td>490</td>
+<td></td>
+<td>0.28</td>
+<td>1.75</td>
+<td>35,7,2</td>
+<td></td>
+<td><tt>G := SmallGroup(280,33);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1, f2*f5 ]);</tt><br />
+ <tt>T := Group([ f2*f3*f4*f5 ]);</tt><br />
+ <tt>U := Group([ f3 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 34 ]*</td>
+<td>C14 x (C5 : C4)<br /><br />[ [ 1, 56 ], [ 4, 14 ] ]</td>
+<td>952</td>
+<td></td>
+<td>448</td>
+<td></td>
+<td>0.470588</td>
+<td>1.6</td>
+<td>56,4,2</td>
+<td></td>
+<td><tt>G := SmallGroup(280,34);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f5, f2, f3, f4*f5^3 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f5^2, f4*f5 ]);</tt><br />
+ <tt>U := Group([ f2*f4*f5^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 35 ]*</td>
+<td>C2 x (C35 : C4)<br /><br />[ [ 1, 8 ], [ 2, 12 ], [ 4, 14 ] ]</td>
+<td>1000</td>
+<td></td>
+<td>448</td>
+<td></td>
+<td>0.448</td>
+<td>1.6</td>
+<td>56,4,2</td>
+<td></td>
+<td><tt>G := SmallGroup(280,35);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := Group([ f1*f4^2, f2, f3*f4^3, f5 ]);</tt><br />
+ <tt>T := Group([ f1*f2*f4^4*f5^5, f3*f4 ]);</tt><br />
+ <tt>U := Group([ f2*f3*f4^2 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 36 ]*</td>
+<td>C2 x D10 x D14<br /><br />[ [ 1, 8 ], [ 2, 20 ], [ 4, 12 ] ]</td>
+<td>936</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.299145</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,36);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 37 ]*</td>
+<td>C2 x C10 x D14<br /><br />[ [ 1, 40 ], [ 2, 60 ] ]</td>
+<td>520</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.538462</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,37);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 38 ]*</td>
+<td>C2 x C14 x D10<br /><br />[ [ 1, 56 ], [ 2, 56 ] ]</td>
+<td>504</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.555556</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,38);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 280, 39 ]*</td>
+<td>C2 x C2 x D70<br /><br />[ [ 1, 8 ], [ 2, 68 ] ]</td>
+<td>552</td>
+<td></td>
+<td>280</td>
+<td></td>
+<td>0.507246</td>
+<td>1</td>
+<td>280,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(280,39);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; f4 := G.4; f5 := G.5; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+
+
+
+
+
+
+<tr>
+<td>[ 282, 1 ]*</td>
+<td>C47 x S3<br /><br />[ [ 1, 94 ], [ 2, 47 ] ]</td>
+<td>470</td>
+<td></td>
+<td>376</td>
+<td></td>
+<td>0.8</td>
+<td>1.33333</td>
+<td>94,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(282,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := Group([ f1*f3, f2 ]);</tt><br />
+ <tt>T := Group([ f1*f3^2 ]);</tt><br />
+ <tt>U := Group([ f1 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 282, 2 ]*</td>
+<td>C3 x D94<br /><br />[ [ 1, 6 ], [ 2, 69 ] ]</td>
+<td>558</td>
+<td></td>
+<td>282</td>
+<td></td>
+<td>0.505376</td>
+<td>1</td>
+<td>282,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(282,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 282, 3 ]*</td>
+<td>D282<br /><br />[ [ 1, 2 ], [ 2, 70 ] ]</td>
+<td>562</td>
+<td></td>
+<td>376</td>
+<td></td>
+<td>0.669039</td>
+<td>1.33333</td>
+<td>94,2,2</td>
+<td></td>
+<td><tt>G := SmallGroup(282,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := Group([ f1*f2, f3 ]);</tt><br />
+ <tt>T := Group([ f1*f2^2*f3^45 ]);</tt><br />
+ <tt>U := Group([ f1*f3^45 ]);</tt></td>
+</tr>
+
+<tr>
+<td>[ 284, 1 ]*</td>
+<td>C71 : C4<br /><br />[ [ 1, 4 ], [ 2, 70 ] ]</td>
+<td>564</td>
+<td></td>
+<td>284</td>
+<td></td>
+<td>0.503546</td>
+<td>1</td>
+<td>284,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(284,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 284, 3 ]*</td>
+<td>D284<br /><br />[ [ 1, 4 ], [ 2, 70 ] ]</td>
+<td>564</td>
+<td></td>
+<td>284</td>
+<td></td>
+<td>0.503546</td>
+<td>1</td>
+<td>284,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(284,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 285, 1 ]*</td>
+<td>C5 x (C19 : C3)<br /><br />[ [ 1, 15 ], [ 3, 30 ] ]</td>
+<td>825</td>
+<td></td>
+<td>285</td>
+<td></td>
+<td>0.345455</td>
+<td>1</td>
+<td>285,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(285,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 286, 1 ]*</td>
+<td>C13 x D22<br /><br />[ [ 1, 26 ], [ 2, 65 ] ]</td>
+<td>546</td>
+<td></td>
+<td>286</td>
+<td></td>
+<td>0.52381</td>
+<td>1</td>
+<td>286,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(286,1);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 286, 2 ]*</td>
+<td>C11 x D26<br /><br />[ [ 1, 22 ], [ 2, 66 ] ]</td>
+<td>550</td>
+<td></td>
+<td>286</td>
+<td></td>
+<td>0.52</td>
+<td>1</td>
+<td>286,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(286,2);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+<tr>
+<td>[ 286, 3 ]*</td>
+<td>D286<br /><br />[ [ 1, 2 ], [ 2, 71 ] ]</td>
+<td>570</td>
+<td></td>
+<td>286</td>
+<td></td>
+<td>0.501754</td>
+<td>1</td>
+<td>286,1,1</td>
+<td></td>
+<td><tt>G := SmallGroup(286,3);</tt><br />
+ <tt>f1 := G.1; f2 := G.2; f3 := G.3; </tt><br />
+ <tt>S := G;</tt><br />
+ <tt>T := Group(One(G));</tt><br />
+ <tt>U := Group(One(G));</tt></td>
+</tr>
+
+</tbody>
+
+</table>
+
+
+ </body>
+ </html>
+
