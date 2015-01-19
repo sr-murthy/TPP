@@ -13,7 +13,7 @@ I. Hedtke, S. Murthy, ’Search and test algorithms for triple product property 
 
 S. Murthy & M. Lång, 'The Triple Product Ratio and Groups with Abelian Normal Subgroups of Prime Index', private research note, Jul. 2014.
 
-S. Hart, I. Hedtke, M. Müller-Hannemann, S. Murthy, ’A fast search algorithm for TPP
+I. Hedtke,  S. Murthy et.al., A fast search algorithm for TPP
 triples and an application for 5 x 5 matrix multiplication’, Groups - Complexity - Cryptology, to appear in May 2015.
 
-The application will be developed using the Django framework.
+The application will be developed using the Python/Django framework.
