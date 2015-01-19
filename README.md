@@ -1,7 +1,7 @@
 TPP
 ===
 
-A web application for querying, displaying and filtering information about mathematical objects called TPP triples, which are associated with finite groups.  These objects and their applications are described in the following papers (in chronological order).
+A web application for querying, displaying and filtering information about mathematical objects called TPP triples, which are associated with finite groups.  This information is currently in the form of HTML tables containing several million records) - <a href="http://www2.informatik.uni-halle.de/da/hedtke/tpp/" target="_blank">see here</a>.  TPP triples and their applications are described in the following papers (in chronological order).
 
 H. Cohn, C. Umans, ’A group-theoretic approach to fast matrix multiplication’, in: Proceedings of the 44th Annual Symposium on Foundations of Computer Science (Cambridge, Massachusetts 2003), IEEE Computer Society (2003), 438-449.
 
