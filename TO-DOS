@@ -2,9 +2,9 @@
 
 Planned/in-progress/pending actions will be listed and described here, with a rough estimate of times.
 
-   1. **Developing a high-level architecture for the application**.  *To be finished by Jan. 30, 2015*.
+   1. **Developing a high-level architecture for the application**.  *To be finished by Feb. 7, 2015*.
    
-   2. **Setting up the Django app development environment on the development machine**.  This involves creating the Django project and app, checking project settings, creating the database (SQLite (v. 3.8.7.4)), running the initial migrations for the utility apps.  *To be finished by Jan. 30, 2015*.
+   2. **Setting up the Django app development environment on the development machine**.  This involves creating the Django project and app, checking project settings, creating the database (SQLite (v. 3.8.7.4)), running the initial migrations for the utility apps.  *To be finished by Feb. 7, 2015*.
 
    3. **Designing the app database schema**:- this will specify the schema for the core tables, of which there will be at least three initially - `groups`, `subgroup_tpp_triples` and `mbs_tpp_stats` - and the table relationships, views, indexes and stored procedures.  *To be finished by Feb. 21, 2015*.
    
