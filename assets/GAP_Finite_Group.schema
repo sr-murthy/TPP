@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "GAP Finite Group",
+  "description": "JSON schema for the TPP Triples Raw Data",
+  "type": "object",
+  "properties": {
+    "group_description": { "type": "string" },
+    "group_order": { "type": "number" },
+    "group_GAP_ID": { "type": "string" },
+    "group_GAP_Desc": { "type": "string" },
+    "group_gens": { "type": "string" },
+    "group_abelian": { "type": "boolean" }
+    "
+
+  }
+}
