@@ -2,11 +2,30 @@
     Parser for the TPP triple raw data contained in static HTML tables located offline,
     and online at http://www2.informatik.uni-halle.de/da/hedtke/tpp/
 '''
-import collections
+import collections, io, json
 
 class TPPTripleDataParser:
 
-    groups_JSON_fields = ['desc', 'order', 'GAP_ID', 'GAP_desc', 'GAP_pickled_ID', 'is_abelian', 'is_cyclic', 'is_simple', 'is_nilpotent', 'nilpotency_class', 'is_solvable', 'derived_length', 'is_pgroup', 'generators', 'char_degrees', 'D3', 'MBS_STPP_param_type', 'Beta0']
+    small_groups_JSON_schema = {
+      'desc': { 'type': 'string', 'python_type': str },
+      'order': { 'type': 'number', 'python_type': int },
+      'GAP_ID': { 'type': 'array', 'python_type': tuple, 'length': 2 },
+      'GAP_desc': { 'type': 'string', 'python_type': str },
+      'GAP_pickled_ID': { 'type': 'string', 'python_type': str },
+      'is_abelian': { 'type': 'boolean', 'python_type': bool },
+      'is_cyclic': { 'type': 'boolean', 'python_type': bool },
+      'is_simple': { 'type': 'boolean', 'python_type': bool },
+      'is_nilpotent': { 'type': 'boolean', 'python_type': bool },
+      'nilpotency_class': { 'type': 'number', 'python_type': int },
+      'is_solvable': { 'type': 'boolean', 'python_type': bool },
+      'derived_length': { 'type': 'number', 'python_type': int },
+      'is_pgroup': { 'type': 'boolean', 'python_type': bool },
+      'generators': { 'type': 'string', 'python_type': str },
+      'char_degrees': { 'type': 'string', 'python_type': str },
+      'D3': { 'type': 'number', 'python_type': int },
+      'MBS_STPP_param_type': { 'type': 'array', 'python_type': tuple, 'length': 3 },
+      'Beta0': { 'type': 'number', 'python_type': int }
+    }
 
     def __get_HTML_table_column_indices( self, row, count ):
 
@@ -60,12 +79,12 @@ class TPPTripleDataParser:
         row_line = ''
 
         while True:
-            line = self.file.readline().lower()
+            line = self.HTML_data_file.readline().lower()
             if not line == '':
                 if '<tr>' in line:
                     row_line += line.replace( ' ', '' )
                     while True:
-                        line = self.file.readline().lower()
+                        line = self.HTML_data_file.readline().lower()
                         if not line == '':
                             row_line += line.strip().replace( ' ', '' )
                             if '</tr>' in line:
@@ -77,9 +96,11 @@ class TPPTripleDataParser:
         return row_line
 
 
-    def get_groups_data( self ):
+    def get_small_groups_HTML_data( self ):
 
-        Group = collections.namedtuple( 'Group', TPPTripleDataParser.groups_JSON_fields )
+        SmallGroup = collections.namedtuple(
+                  'SmallGroup', TPPTripleDataParser.small_groups_JSON_schema.keys()
+                                      )
         row = ''
         i = 0
         print '\n'
@@ -88,86 +109,65 @@ class TPPTripleDataParser:
         while not row == 'EOF':
             ID = self.__get_HTML_table_column_value( row, 'GAP_ID' )
             ptype = self.__get_HTML_table_column_value( row, 'MBS_STPP_param_type' )
-            group_rec = Group( desc='', order=ID[0], GAP_ID=ID, GAP_desc='',
+            group_rec = SmallGroup( desc='', order=ID[0], GAP_ID=ID, GAP_desc='',
             GAP_pickled_ID='', is_abelian=None, is_cyclic=None, is_simple=None,
             is_nilpotent=None, nilpotency_class=None, is_solvable=None,
             derived_length=None, is_pgroup=None, generators=None,
             char_degrees=self.__get_HTML_table_column_value( row, 'char_degrees' ),
             D3=self.__get_HTML_table_column_value( row, 'D3' ),
             MBS_STPP_param_type=ptype, Beta0=ptype[0]*ptype[1]*ptype[2] )
-            self.groups.update( {ID:group_rec} )
+            self.small_groups.update( {ID:group_rec} )
             i += 1
             row = self.__get_HTML_table_row()
-        self.file.close()
-        print 'Ordered dictionary of ' + str( len( groups ) ) + ' named tuples of groups created.  File ' + self.file.name + ' closed.'
+
+        self.HTML_data_file.close()
+        print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( self.small_groups ), self.HTML_data_file.name )
 
 
-    def __format_groups_JSON_record_line( self, field, value ):
+    def write_small_groups_JSON_file( self, file_dir, file_name, indent_num ):
 
-        record_line = ''
-        record_line += ' '*4 + '"' + field + '": '
-        if field in [ 'desc', 'GAP_desc', 'GAP_pickled_ID', \
-                      'generators', 'char_degrees' ]:
-            if value != None: record_line += str( value ).join( '""' )
-            else: record_line += 'null'
-        elif field in [ 'order', 'is_abelian', 'is_cyclic', 'is_simple', \
-                                'is_nilpotent', 'nilpotency_class', 'is_solvable', \
-                                'derived_length', 'is_pgroup', 'D3', 'Beta0' ]:
-            if value != None: record_line += str( value )
-            else: record_line += 'null'
-        elif field in [ 'GAP_ID', 'MBS_STPP_param_type' ]:
-            if value != None: record_line += str( list( value ) )
-            else: record_line += 'null'
-        if fields.index( field ) != len( fields ) - 1:
-            record_line += ','
+        with io.open( file_dir + file_name, 'w', encoding='utf-8' ) as file:
+            file.write( unicode( '[\n' ) )
+            for count, small_group in enumerate( self.small_groups.values() ):
+                if count:  file.write( unicode( ',\n' ) )
+                JSON_obj = json.dumps( small_group._asdict(), \
+                                       indent=indent_num, \
+                                       ensure_ascii=False )
+                file.write( unicode( JSON_obj ) )
+            file.write( unicode( ']' ) )
 
-        return record_line
+        print '{} small group JSON objects successfully written to the file {}.'.\
+              format( len( self.small_groups ), file.name )
 
 
-    def __format_groups_JSON_record( self, group ):
+    def read_small_groups_JSON_file( self, file_path ):
 
-        fields = group._fields
-        record = ''
+        sm_groups = collections.OrderedDict()
+        decoder = json.JSONDecoder()
 
-        record += ' '*2 + '{\n'
-        for field in fields:
-            value = group[fields.index( field )]
-            record_line = self.__format_groups_JSON_record_line( field, value )
-            record += record_line + '\n'
-            record_line = ''
-        record += ' '*2 + '}'
+        with io.open( file_path, 'r', encoding='utf-8' ) as file:
+            for line in file:
+                if not '[\n' in line:
+                    if '{' in line and '}' in line:
+                        sm_group = decoder.raw_decode( line )[0]
+                        ID = tuple( sm_group['GAP_ID'] )
+                        sm_group['GAP_ID'] = ID
+                        ptype = tuple( sm_group['MBS_STPP_param_type'] )
+                        sm_group['MBS_STPP_param_type'] = ptype
+                        sm_group = collections.namedtuple( 'SmallGroup', \
+                                   TPPTripleDataParser.small_groups_JSON_schema.keys() )\
+                                   ( **sm_group )
+                        sm_groups.update( {ID:sm_group} )
 
-        return record
-
-
-    def write_groups_JSON_file( self, file_dir, file_name ):
-
-        file = open( file_dir + file_name, 'w' )
-        record = ''
-
-        file.write( '{\n' )
-        i = 0
-        for ID in self.groups.keys():
-            if i > 0:
-                record = '\n'
-            record += self.__format_groups_JSON_record( self.groups[ID] )
-            if i != len( groups ) - 1: record += ','
-            file.write( record )
-            i += 1
-        file.write( ' '*2 + '\n}' )
-
-        file.close()
-        print str( i ) + ' JSON records successfully written to the file ' + \
-              file.name + '.'
+        print 'Ordered dictionary of {} named tuples of small groups loaded from JSON file {}.'.format( len( sm_groups ), file.name )
+        return sm_groups
 
 
     def __init__( self, file_path ):
 
-        print 'Creating a new TPPTripleDataParser instance from file ' + \
-              str( file_path ) + '.'
+        print 'Creating a new TPPTripleDataParser instance from file {}.'.\
+              format( file_path )
         self.TPP_Triples = collections.OrderedDict()
-        self.groups = collections.OrderedDict()
-        self.file = open( file_path, 'r', 0 )
-        self.groups_JSON_file = None
-
-
+        self.small_groups = collections.OrderedDict()
+        self.HTML_data_file = open( file_path, 'r', 0 )
+        self.small_groups_JSON_file = None
