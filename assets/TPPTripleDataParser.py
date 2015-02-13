@@ -96,8 +96,9 @@ class TPPTripleDataParser:
         return row_line
 
 
-    def get_small_groups_HTML_data( self ):
+    def __get_small_groups_HTML_data( self ):
 
+        small_groups = collections.OrderedDict()
         SmallGroup = collections.namedtuple(
                   'SmallGroup', TPPTripleDataParser.small_groups_JSON_schema.keys()
                                       )
@@ -116,12 +117,13 @@ class TPPTripleDataParser:
             char_degrees=self.__get_HTML_table_column_value( row, 'char_degrees' ),
             D3=self.__get_HTML_table_column_value( row, 'D3' ),
             MBS_STPP_param_type=ptype, Beta0=ptype[0]*ptype[1]*ptype[2] )
-            self.small_groups.update( {ID:group_rec} )
+            small_groups.update( {ID:group_rec} )
             i += 1
             row = self.__get_HTML_table_row()
 
         self.HTML_data_file.close()
-        print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( self.small_groups ), self.HTML_data_file.name )
+        print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( small_groups ), self.HTML_data_file.name )
+        return small_groups
 
 
     def write_small_groups_JSON_file( self, file_dir, file_name, indent_num ):
@@ -167,7 +169,5 @@ class TPPTripleDataParser:
 
         print 'Creating a new TPPTripleDataParser instance from file {}.'.\
               format( file_path )
-        self.TPP_Triples = collections.OrderedDict()
-        self.small_groups = collections.OrderedDict()
         self.HTML_data_file = open( file_path, 'r', 0 )
-        self.small_groups_JSON_file = None
+        self.small_groups = self.__get_small_groups_HTML_data()
