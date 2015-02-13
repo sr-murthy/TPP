@@ -25,16 +25,16 @@
       "nilpotency_class": { "type": "number" },
       "is_solvable": { "type": "boolean" },
       "derived_length": { "type": "number" },
-      "is_p-group": { "type": "boolean" },
+      "is_pgroup": { "type": "boolean" },
       "generators": { "type": "string" },
       "char_degrees": { "type": "string" },
       "D3": { "type": "number" },
       "MBS_STPP_param_type": { "type": "array",
-                                     "items": { "type": "number" },
-                                     "minItems": 3,
-                                     "maxItems": 3,
-                                     "uniqueItems": false
-                                   },
+                               "items": { "type": "number" },
+                               "minItems": 3,
+                               "maxItems": 3,
+                               "uniqueItems": false
+                             },
       "Beta0": { "type": "number" }
     }
   },

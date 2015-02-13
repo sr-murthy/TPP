@@ -1,16 +1,22 @@
 {
-      "group_description": "symmetric group of degree 3",
-      "group_order": 6,
-      "group_GAP_ID": "[ 6, 1 ]",
-      "group_GAP_Desc": "S3",
-      "group_GAP_OMPickledString": "PRMGILIS\>2PERM\>7(1,2,3)PERM\>5(1,2)INTG\>16FAIL",
-      "group_isabelian": false,
-      "group_iscyclic": false,
-      "group_gens_tup": "[ (1,2,3), (1,2) ]",
-      "group_families": "permutation group",
-      "group_char_degrees": "[ [ 1, 2 ], [ 2, 1 ] ]",
-      "group_D3": 10
-}
-
-{
+  {
+    "desc":
+    "order": 6,
+    "GAP_ID": [6,1],
+    "GAP_desc": "S3",
+    "GAP_pickled_ID":
+    "is_abelian": false,
+    "is_cyclic": false,
+    "is_simple": false,
+    "is_nilpotent": false
+    "nilpotency_class":
+    "is_solvable": true,
+    "derived_length": 2,
+    "is_pgroup": false,
+    "generators": "[(1,2,3),(1,2)]",
+    "char_degrees": "[[1,4],[2,1]]",
+    "D3": 12,
+    "MBS_STPP_param_type": [2,2,2],
+    "Beta0": 8
+  }
 }
