@@ -119,6 +119,7 @@ class TPPTripleDataParser:
             self.small_groups.update( {ID:group_rec} )
             i += 1
             row = self.__get_HTML_table_row()
+
         self.HTML_data_file.close()
         print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( self.small_groups ), self.HTML_data_file.name )
 
@@ -139,6 +140,29 @@ class TPPTripleDataParser:
               format( len( self.small_groups ), file.name )
 
 
+    def read_small_groups_JSON_file( self, file_path ):
+
+        sm_groups = collections.OrderedDict()
+        decoder = json.JSONDecoder()
+
+        with io.open( file_path, 'r', encoding='utf-8' ) as file:
+            for line in file:
+                if not '[\n' in line:
+                    if '{' in line and '}' in line:
+                        sm_group = decoder.raw_decode( line )[0]
+                        ID = tuple( sm_group['GAP_ID'] )
+                        sm_group['GAP_ID'] = ID
+                        ptype = tuple( sm_group['MBS_STPP_param_type'] )
+                        sm_group['MBS_STPP_param_type'] = ptype
+                        sm_group = collections.namedtuple( 'SmallGroup', \
+                                   TPPTripleDataParser.small_groups_JSON_schema.keys() )\
+                                   ( **sm_group )
+                        sm_groups.update( {ID:sm_group} )
+
+        print 'Ordered dictionary of {} named tuples of small groups loaded from JSON file {}.'.format( len( sm_groups ), file.name )
+        return sm_groups
+
+
     def __init__( self, file_path ):
 
         print 'Creating a new TPPTripleDataParser instance from file {}.'.\
@@ -147,5 +171,3 @@ class TPPTripleDataParser:
         self.small_groups = collections.OrderedDict()
         self.HTML_data_file = open( file_path, 'r', 0 )
         self.small_groups_JSON_file = None
-
-
