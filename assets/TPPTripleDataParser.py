@@ -75,17 +75,17 @@ class TPPTripleDataParser:
         return col_val
 
 
-    def __get_HTML_table_row( self ):
+    def __get_HTML_table_row( self, HTML_data_file ):
 
         row_line = ''
 
         while True:
-            line = self.HTML_data_file.readline().lower()
+            line = HTML_data_file.readline().lower()
             if not line == '':
                 if '<tr>' in line:
                     row_line += line.replace( ' ', '' )
                     while True:
-                        line = self.HTML_data_file.readline().lower()
+                        line = HTML_data_file.readline().lower()
                         if not line == '':
                             row_line += line.strip().replace( ' ', '' )
                             if '</tr>' in line:
@@ -97,16 +97,16 @@ class TPPTripleDataParser:
         return row_line
 
 
-    def __get_small_groups_static_HTML_data( self ):
+    def get_small_groups_static_HTML_data( self, file_path ):
 
-        small_groups = collections.OrderedDict()
+        HTML_data_file = open( file_path, 'r', 0 )
         SmallGroup = collections.namedtuple(
                   'SmallGroup', TPPTripleDataParser.small_groups_JSON_schema.keys()
                                       )
         row = ''
         i = 0
         print '\n'
-        row = self.__get_HTML_table_row()
+        row = self.__get_HTML_table_row( HTML_data_file)
 
         while not row == 'EOF':
             ID = self.__get_HTML_table_column_value( row, 'GAP_ID' )
@@ -119,13 +119,12 @@ class TPPTripleDataParser:
             char_degrees=self.__get_HTML_table_column_value( row, 'char_degrees' ),
             D3=self.__get_HTML_table_column_value( row, 'D3' ),
             MBS_STPP_param_type=ptype, Beta0=ptype[0]*ptype[1]*ptype[2] )
-            small_groups.update( {ID:group_rec} )
+            self.small_groups.update( {ID:group_rec} )
             i += 1
-            row = self.__get_HTML_table_row()
+            row = self.__get_HTML_table_row( HTML_data_file )
 
-        self.HTML_data_file.close()
-        print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( small_groups ), self.HTML_data_file.name )
-        return small_groups
+        HTML_data_file.close()
+        print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( self.small_groups ), HTML_data_file.name )
 
 
     def write_small_groups_JSON_file( self, file_dir, file_name, indent_num ):
@@ -144,7 +143,7 @@ class TPPTripleDataParser:
               format( len( self.small_groups ), file.name )
 
 
-    def read_small_groups_JSON_file( self, file_path ):
+    def read_small_groups_JSON_file( self, file_path, source ):
 
         sm_groups = collections.OrderedDict()
         decoder = json.JSONDecoder()
@@ -155,8 +154,14 @@ class TPPTripleDataParser:
                     sm_group = decoder.raw_decode( line )[0]
                     ID = tuple( sm_group['GAP_ID'] )
                     sm_group['GAP_ID'] = ID
-                    ptype = tuple( sm_group['MBS_STPP_param_type'] )
-                    sm_group['MBS_STPP_param_type'] = ptype
+                    if source in [ 'static HTML', 'JSON' ]:
+                        sm_group['MBS_STPP_param_type'] = \
+                          tuple( sm_group['MBS_STPP_param_type'] )
+                    elif source == 'GAP':
+                        sm_group['order'] = ID[0]
+                        sm_group['D3'] = None
+                        sm_group['MBS_STPP_param_type'] = None
+                        sm_group['Beta0'] = None
                     sm_group = collections.namedtuple( 'SmallGroup', \
                                TPPTripleDataParser.small_groups_JSON_schema.keys() )\
                                ( **sm_group )
@@ -166,14 +171,33 @@ class TPPTripleDataParser:
         return sm_groups
 
 
-    def get_small_groups( self ):
+    def update_small_groups( self, groups_updated_info ):
 
-        return self.small_groups
+        count = 0
+
+        for ID in self.small_groups.keys():
+            if ID in groups_updated_info.keys():
+                small_group = self.small_groups[ID]._asdict()
+                update_group = groups_updated_info[ID]._asdict()
+                for key in update_group.keys():
+                    if not key in [ 'GAP_ID', 'Beta0', 'MBS_STPP_param_type' ]:
+                        small_group[key] = update_group[key]
+                small_group = collections.namedtuple( 'SmallGroup', \
+                           TPPTripleDataParser.small_groups_JSON_schema.keys() )\
+                           ( **small_group )
+                self.small_groups[ID] = small_group
+                count += 1
+
+        print 'Updated {} small groups in parser.'.format( count )
 
 
-    def __init__( self, file_path ):
+    def get_small_groups( self, asdict ):
 
-        print 'Creating a new TPPTripleDataParser instance from file {}.'.\
-              format( file_path )
-        self.HTML_data_file = open( file_path, 'r', 0 )
-        self.small_groups = self.__get_small_groups_static_HTML_data()
+        if asdict: return self.small_groups._asdict()
+        else: return self.small_groups
+
+
+    def __init__( self ):
+
+        print 'Creating a new TPPTripleDataParser instance ...'
+        self.small_groups = collections.OrderedDict()
