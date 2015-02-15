@@ -1,6 +1,5 @@
 '''
-    Parser for the TPP triple raw data contained in static HTML tables located offline,
-    and online at http://www2.informatik.uni-halle.de/da/hedtke/tpp/
+    Parser for the TPP triple raw data contained in static HTML tables containing subgroup TPP data and JSON files containing GAP small groups information.
 '''
 import collections, io, json
 
