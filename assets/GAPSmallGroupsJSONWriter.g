@@ -1,3 +1,46 @@
+NilpotencyClass := function( G )
+
+  if IsNilpotent( G ) then
+    return NilpotencyClassOfGroup( G );
+  else
+    return "null";
+  fi;
+
+    end;
+
+
+SolvableLength := function( G )
+
+  if IsSolvable( G ) then
+    return DerivedLength( G );
+  else
+    return "null";
+  fi;
+
+end;
+
+
+Generators := function( G )
+
+  return List( GeneratorsOfGroup( G ), g -> [g,Order(g)] );
+
+end;
+
+
+D3 := function( G )
+
+  local x, DG;
+
+  DG := 0;
+  for x in CharacterDegrees( G ) do
+    DG := DG + x[2]*( x[1]^3 );
+  od;
+
+  return DG;
+
+end;
+
+
 # GAP function for printing the JSON object information of a group in the GAP Small Groups # Library.
 
 AsJSONObject := function( G )
@@ -18,13 +61,13 @@ AsJSONObject := function( G )
      "\"derived_length\": ", String( SolvableLength( G ) ), ",",
      "\"is_pgroup\": ", String( IsPGroup( G ) ), ",",
      "\"generators\": \"", String( Generators( G ) ), "\",",
-     "\"char_degrees\": \"", String( MyCharacterDegrees( G ) ), "\"}" );
+     "\"char_degrees\": \"", String( CharacterDegrees( G ) ), "\"}" );
 
   end;
 
 WriteSmallGroupsJSONFile := function( file_dir, file_name, orders )
 
-  local file, n, num_small_groups, total_groups, total_bytes;
+  local file, n, i, num_small_groups, total_groups, total_bytes;
 
   LoadPackage( "IO" );
   file := IO_File( Concatenation( file_dir, file_name ), "w" );
