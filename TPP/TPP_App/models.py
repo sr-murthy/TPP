@@ -3,14 +3,14 @@ from django.db import models
 class SmallGroup( models.Model ):
 
     GAP_ID = models.CommaSeparatedIntegerField( max_length=14, primary_key=True,\
-                                                verbose_name="GAP Small Group ID" )
+                                                verbose_name="GAP small group ID" )
     order = models.IntegerField( null=False, verbose_name="Group order" )
     GAP_desc = models.CharField( max_length=100, null=False, \
-                                 verbose_name="GAP Structure Description" )
+                                 verbose_name="GAP structure description" )
     GAP_pickled_ID = models.CharField( max_length=250, null=True, \
                                  verbose_name="GAP IO pickled string representation" )
     is_abelian = models.BooleanField( null=False, verbose_name="Abelian group?" )
-    comm_length = models.IntegerField( null=False, verbose=name="Commutator length" )
+    comm_length = models.IntegerField( null=False, verbose_name="Commutator length" )
     is_cyclic = models.BooleanField( null=False, verbose_name="Cyclic group?" )
     is_elem_abelian = models.BooleanField( null=False, \
                                  verbose_name="Elementary abelian group?" )
@@ -24,7 +24,7 @@ class SmallGroup( models.Model ):
     generators = models.CharField( max_length=250, null=False, \
                                    verbose_name="Generators and orders" )
     char_degrees = models.CharField( max_length=250, null=False, \
-                                   verbose="Character degrees and multiplicities" )
+                                   verbose_name="Character degrees and multiplicities" )
     D3 = models.IntegerField( null=False, \
                               verbose_name="Sum of cubes of character degrees" )
     MBS_STPP_param_type = models.CommaSeparatedIntegerField( max_length=16, null=False, \
@@ -35,5 +35,5 @@ class SmallGroup( models.Model ):
         return self.GAP_ID.join( '[]' )
 
     def get_MBS_STPP_param_type( self ):
-        return self.MBS_STPP_param_type.join( '() )
+        return self.MBS_STPP_param_type.join( '()' )
 
