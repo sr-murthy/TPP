@@ -1,6 +1,13 @@
 LoadPackage( "sonata" );
 
 
+NumberOfSmallGroups := function( range )
+
+  return Sum( List( range, N -> NumberSmallGroups( N ) ) );
+
+  end;
+
+
 NilpClass := function( G )
 
   if IsNilpotent( G ) then
@@ -9,7 +16,7 @@ NilpClass := function( G )
     return "null";
   fi;
 
-    end;
+  end;
 
 
 SolvableLength := function( G )
@@ -20,14 +27,14 @@ SolvableLength := function( G )
     return "null";
   fi;
 
-end;
+  end;
 
 
 Generators := function( G )
 
   return List( GeneratorsOfGroup( G ), g -> [g,Order(g)] );
 
-end;
+  end;
 
 
 D3 := function( G )
@@ -41,7 +48,7 @@ D3 := function( G )
 
   return DG;
 
-end;
+  end;
 
 
 IndexLargestAbelianNormalSubgroup := function( G )
@@ -57,7 +64,7 @@ IndexLargestAbelianNormalSubgroup := function( G )
     return li[Length( li )];
   fi;
 
-end;
+  end;
 
 
 IndexLargestCyclicNormalSubgroup := function( G )
@@ -73,7 +80,7 @@ IndexLargestCyclicNormalSubgroup := function( G )
     return li[Length( li )];
   fi;
 
-end;
+  end;
 
 
 IndexLargestElementaryAbelianNormalSubgroup := function( G )
@@ -89,7 +96,7 @@ IndexLargestElementaryAbelianNormalSubgroup := function( G )
     return li[Length( li )];
   fi;
 
-end;
+  end;
 
 
 # GAP function for printing the JSON object information of a group in the GAP Small Groups # Library.
@@ -121,7 +128,7 @@ AsJSONObject := function( G )
 
 WriteSmallGroupsJSONFile := function( file_dir, file_name, orders, inc_abelian )
 
-  local file, n, i, num_small_groups, total_groups, total_bytes;
+  local file, n, i, num_small_groups, G, total_groups, total_bytes;
 
   LoadPackage( "IO" );
   file := IO_File( Concatenation( file_dir, file_name ), "w" );
