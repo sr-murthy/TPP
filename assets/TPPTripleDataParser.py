@@ -10,6 +10,9 @@ class TPPTripleDataParser:
       'order': { 'type': 'number', 'python_type': int },
       'GAP_desc': { 'type': 'string', 'python_type': str },
       'GAP_pickled_ID': { 'type': 'string', 'python_type': str },
+      'index_LAN_subgroup': { 'type': 'number', 'python_type': int },
+      'index_LCN_subgroup': { 'type': 'number', 'python_type': int },
+      'index_LEAN_subgroup': { 'type': 'number', 'python_type': int },
       'is_abelian': { 'type': 'boolean', 'python_type': bool },
       'comm_length': { 'type': 'number', 'python_type': int },
       'is_cyclic': { 'type': 'boolean', 'python_type': bool },
@@ -157,6 +160,9 @@ class TPPTripleDataParser:
                     if source in [ 'static HTML', 'JSON' ]:
                         sm_group['MBS_STPP_param_type'] = \
                           tuple( sm_group['MBS_STPP_param_type'] )
+                        sm_group['index_LAN_subgroup'] = None
+                        sm_group['index_LCN_subgroup'] = None
+                        sm_group['index_LEAN_subgroup'] = None
                     elif source == 'GAP':
                         sm_group['order'] = ID[0]
                         sm_group['D3'] = None

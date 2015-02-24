@@ -9,6 +9,12 @@ class SmallGroup( models.Model ):
                                  verbose_name="GAP structure description" )
     GAP_pickled_ID = models.CharField( max_length=250, null=True, \
                                  verbose_name="GAP IO pickled string representation" )
+    index_LAN_subgroup = models.IntegerField( null=True,
+      verbose_name="Index of a largest abelian normal subgroup" )
+    index_LCN_subgroup = models.IntegerField( null=True,
+      verbose_name="Index of a largest cyclic normal subgroup" )
+    index_LEAN_subgroup = models.IntegerField( null=True,
+      verbose_name="Index of a largest elementary abelian normal subgroup" )
     is_abelian = models.BooleanField( null=False, verbose_name="Abelian group?" )
     comm_length = models.IntegerField( null=False, verbose_name="Commutator length" )
     is_cyclic = models.BooleanField( null=False, verbose_name="Cyclic group?" )
@@ -36,4 +42,8 @@ class SmallGroup( models.Model ):
 
     def get_MBS_STPP_param_type( self ):
         return self.MBS_STPP_param_type.join( '()' )
+
+    # __unicode__ on Python 2
+    def __str__(self):
+        return self.GAP_ID.join( '[]' )
 
