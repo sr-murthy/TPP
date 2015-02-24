@@ -1,4 +1,7 @@
-NilpotencyClass := function( G )
+LoadPackage( "sonata" );
+
+
+NilpClass := function( G )
 
   if IsNilpotent( G ) then
     return NilpotencyClassOfGroup( G );
@@ -41,6 +44,54 @@ D3 := function( G )
 end;
 
 
+IndexLargestAbelianNormalSubgroup := function( G )
+
+  local li;
+
+  li := List( Filtered( Subgroups( G ),
+              H -> IsAbelian( H ) and IsNormal( G, H ) and Order( H ) > 1 ),
+              K -> IndexNC( G, K ) );
+  if li = [] then
+    return "null";
+  else
+    return li[Length( li )];
+  fi;
+
+end;
+
+
+IndexLargestCyclicNormalSubgroup := function( G )
+
+  local li;
+
+  li := List( Filtered( Subgroups( G ),
+              H -> IsCyclic( H ) and IsNormal( G, H ) and Order( H ) > 1 ),
+              K -> IndexNC( G, K ) );
+  if li = [] then
+    return "null";
+  else
+    return li[Length( li )];
+  fi;
+
+end;
+
+
+IndexLargestElementaryAbelianNormalSubgroup := function( G )
+
+  local li;
+
+  li := List( Filtered( Subgroups( G ),
+              H -> IsElementaryAbelian( H ) and IsNormal( G, H ) and Order( H ) > 1 ),
+              K -> IndexNC( G, K ) );
+  if li = [] then
+    return "null";
+  else
+    return li[Length( li )];
+  fi;
+
+end;
+
+
 # GAP function for printing the JSON object information of a group in the GAP Small Groups # Library.
 
 AsJSONObject := function( G )
@@ -49,6 +100,9 @@ AsJSONObject := function( G )
     "{\"GAP_ID\": ", String( IdSmallGroup( G ) ), ",",
      "\"GAP_desc\": \"", String( StructureDescription( G ) ), "\",",
      "\"GAP_pickled_ID\": ", "null", ",",
+     "\"index_LAN_subgroup\": ", String( IndexLargestAbelianNormalSubgroup( G ) ), ",",
+     "\"index_LCN_subgroup\": ", String( IndexLargestCyclicNormalSubgroup( G ) ), ",",
+     "\"index_LEAN_subgroup\": ", String( IndexLargestElementaryAbelianNormalSubgroup( G ) ), ",",
      "\"is_abelian\": ", String( IsAbelian( G ) ), ",",
      "\"comm_length\": ", String( CommutatorLength( G ) ), ",",
      "\"is_cyclic\": ", String( IsCyclic( G ) ), ",",
@@ -56,7 +110,7 @@ AsJSONObject := function( G )
      "\"is_simple\": ", String( IsSimple( G ) ), ",",
      "\"comp_length\": ", String( Size( CompositionSeries( G ) ) - 1 ), ",",
      "\"is_nilpotent\": ", String( IsNilpotent( G ) ), ",",
-     "\"nilpotency_class\": ", String( NilpotencyClass( G ) ), ",",
+     "\"nilpotency_class\": ", String( NilpClass( G ) ), ",",
      "\"is_solvable\": ", String( IsSolvable( G ) ), ",",
      "\"derived_length\": ", String( SolvableLength( G ) ), ",",
      "\"is_pgroup\": ", String( IsPGroup( G ) ), ",",
@@ -65,7 +119,7 @@ AsJSONObject := function( G )
 
   end;
 
-WriteSmallGroupsJSONFile := function( file_dir, file_name, orders )
+WriteSmallGroupsJSONFile := function( file_dir, file_name, orders, inc_abelian )
 
   local file, n, i, num_small_groups, total_groups, total_bytes;
 
@@ -78,11 +132,22 @@ WriteSmallGroupsJSONFile := function( file_dir, file_name, orders )
   for n in orders do
     num_small_groups := NumberSmallGroups( n );
     for i in [1..num_small_groups] do
-      if total_groups > 0 then
-        total_bytes := total_bytes + IO_WriteLine( file, "," );
+      G := SmallGroup( n, i );
+      if inc_abelian then
+        if total_groups > 0 then
+          total_bytes := total_bytes + IO_WriteLine( file, "," );
+        fi;
+        total_bytes := total_bytes + IO_Write( file, AsJSONObject( G ) );
+        total_groups := total_groups + 1;
+      else
+        if not IsAbelian( G ) then
+          if total_groups > 0 then
+            total_bytes := total_bytes + IO_WriteLine( file, "," );
+          fi;
+          total_bytes := total_bytes + IO_Write( file, AsJSONObject( G ) );
+          total_groups := total_groups + 1;
+        fi;
       fi;
-      total_bytes := total_bytes + IO_Write( file, AsJSONObject( SmallGroup( n, i ) ) );
-      total_groups := total_groups + 1;
     od;
   od;
   total_bytes := total_bytes + IO_WriteFlush( file, "\n]" );
