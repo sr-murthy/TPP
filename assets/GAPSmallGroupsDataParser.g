@@ -126,9 +126,66 @@ AsJSONObject := function( G )
 
   end;
 
-WriteSmallGroupsJSONFile := function( file_dir, file_name, orders, inc_abelian )
+excluded_TPP_small_groups := [ [128,[2320]],[192,[1541..1542]],[288,[1040,1044]],
+                              [320,[1276..1640]],[324,[169,175]],
+                              [384,[1336..20169]],[432],[448],
+                              [480,[824..1213]],[486,[242..261]],
+                              [512],[544],[576,[520..8681]],[640],
+                              [648,[334..757]],[672,[684..1280]],
+                              [686,[14]],[704,[487..1387]],[720,[473..840]],
+                              [729,[122..504]],[736,[194]],[756,[172..189]],
+                              [768],[784,[132..172]],[800,[218..1211]],
+                              [810,[95..113]],[832,[298..1630]],
+                              [880],[896],[900],[912],[928],[936],[960],[972],
+                              [992],[1000] ];
 
-  local file, n, i, num_small_groups, G, total_groups, total_bytes;
+
+ExceptionalTPPSmallGroupOrders := function()
+
+  return List( excluded_TPP_small_groups, ex_group -> ex_group[1] );
+
+  end;
+
+
+IsExceptionalTPPSmallGroupOrder := function( order )
+
+  return order in ExceptionalTPPSmallGroupOrders();
+
+  end;
+
+
+ExcludedTPPSmallGroupOrders := function()
+
+  return List( Filtered( excluded_TPP_small_groups, ex_group -> Length( ex_group ) = 1 ),
+               exc_group -> exc_group[1] );
+
+  end;
+
+
+IsExcludedTPPSmallGroupOrder := function( order )
+
+  return order in ExcludedTPPSmallGroupOrders();
+
+  end;
+
+
+IsExcludedTPPSmallGroup := function( ID )
+
+  local pos;
+
+  pos := Position( ExceptionalTPPSmallGroupOrders(), ID[1] );
+  if not pos = fail then
+    return ( ID[2] in excluded_TPP_small_groups[pos][2] );
+  fi;
+
+  return false;
+
+  end;
+
+
+WriteSmallGroupsJSONFile := function( file_dir, file_name, ID1, ID2, inc_abelian, TPP_exclusions )
+
+  local file, n, m, order, excls, i, index_range, num_small_groups, G, total_groups, total_bytes;
 
   LoadPackage( "IO" );
   file := IO_File( Concatenation( file_dir, file_name ), "w" );
@@ -136,10 +193,44 @@ WriteSmallGroupsJSONFile := function( file_dir, file_name, orders, inc_abelian )
   total_bytes := 0;
 
   IO_WriteLine( file, "[" );
-  for n in orders do
-    num_small_groups := NumberSmallGroups( n );
-    for i in [1..num_small_groups] do
-      G := SmallGroup( n, i );
+  n := ID1[1];
+  m := ID2[1];
+  if TPP_exclusions = true then
+    excls := Filtered( [n..m], x -> not x in excls );
+    n := excls[1];
+    m := excls[Length( excls )];
+  fi;
+  index_range := [];
+  for order in [n..m] do
+    if n < m then
+      if order = n then
+        if Length( ID1 ) = 1 then
+          index_range[1] := 1;
+        elif Length( ID1 ) = 2 then
+          index_range[1] := ID1[2];
+        fi;
+        index_range[2] := NumberSmallGroups( order );
+      elif order in [n+1..m-1] then
+        index_range[1] := 1;
+        index_range[2] := NumberSmallGroups( order );
+      elif order = m then
+        index_range[1] := 1;
+        if Length( ID2 ) = 1 then
+          index_range[2] := NumberSmallGroups( order );
+        elif Length( ID2 ) = 2 then
+          index_range[2] := ID2[2];
+        fi;
+      fi;
+    elif n = m then
+      if Length( ID1 ) = 1 then
+        index_range[1] := 1;
+      elif Length( ID2 ) = 2 then
+        index_range[1] := ID1[2];
+      fi;
+      index_range[2] := ID2[2];
+    fi;
+    for i in [index_range[1]..index_range[2]] do
+      G := SmallGroup( order, i );
       if inc_abelian then
         if total_groups > 0 then
           total_bytes := total_bytes + IO_WriteLine( file, "," );
