@@ -15,18 +15,25 @@ class SmallGroup( models.Model ):
       verbose_name="Index of a largest cyclic normal subgroup" )
     index_LEAN_subgroup = models.IntegerField( null=True,
       verbose_name="Index of a largest elementary abelian normal subgroup" )
-    is_abelian = models.BooleanField( null=False, verbose_name="Abelian group?" )
+    is_abelian = models.BooleanField( null=False, verbose_name="Abelian group?",\
+                                      default=None )
     comm_length = models.IntegerField( null=False, verbose_name="Commutator length" )
-    is_cyclic = models.BooleanField( null=False, verbose_name="Cyclic group?" )
+    is_cyclic = models.BooleanField( null=False, verbose_name="Cyclic group?",\
+                                     default=None )
     is_elem_abelian = models.BooleanField( null=False, \
-                                 verbose_name="Elementary abelian group?" )
-    is_simple = models.BooleanField( null=False, verbose_name="Simple group?" )
+                                 verbose_name="Elementary abelian group?",\
+                                 default=None )
+    is_simple = models.BooleanField( null=False, verbose_name="Simple group?",\
+                                     default=None )
     comp_length = models.IntegerField( null=False, verbose_name="Composition length" )
-    is_nilpotent = models.BooleanField( null=False, verbose_name="Nilpotent group?" )
+    is_nilpotent = models.BooleanField( null=False, verbose_name="Nilpotent group?",\
+                                        default=None )
     nilpotency_class = models.IntegerField( null=True, verbose_name="Nilpotency class" )
-    is_solvable = models.BooleanField( null=False, verbose_name="Solvable group?" )
+    is_solvable = models.BooleanField( null=False, verbose_name="Solvable group?",\
+                                       default=None )
     derived_length = models.IntegerField( null=True, verbose_name="Derived length" )
-    is_pgroup = models.BooleanField( null=False, verbose_name="Is p-group?" )
+    is_pgroup = models.BooleanField( null=False, verbose_name="Is p-group?",\
+                                     default=None )
     generators = models.CharField( max_length=250, null=False, \
                                    verbose_name="Generators and orders" )
     char_degrees = models.CharField( max_length=250, null=False, \
