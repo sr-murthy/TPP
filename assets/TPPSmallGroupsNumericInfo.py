@@ -36,6 +36,15 @@ class TPPSmallGroupsNumericInfo:
 
 
     @classmethod
+    def exceptional_TPP_small_group_indices_of_order( cls, order ):
+
+        if order in cls.excluded_TPP_small_groups.keys():
+            return cls.excluded_TPP_small_groups[order]
+        else:
+            return []
+
+
+    @classmethod
     def excluded_TPP_small_group_orders( cls ):
 
         return filter( lambda order: excluded_TPP_small_groups[order] == 'all', \
