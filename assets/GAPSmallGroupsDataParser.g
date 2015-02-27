@@ -1,12 +1,31 @@
 LoadPackage( "sonata" );
 
 
-NumberOfSmallGroups := function( range )
+NumberOfGAPSmallGroupsOfOrders := function( orders_list )
 
-  return Sum( List( range, N -> NumberSmallGroups( N ) ) );
+  return Sum( List( orders_list, order -> NumberSmallGroups( order ) ) );
 
   end;
 
+
+NumberOfGAPSmallGroupsInIDRange := function( ID1, ID2)
+
+  if ID1[1] in [1..2000] and ID2[1] in [1..2000] then
+    if ID1[2] in [1..NumberSmallGroups( ID1[1] )] and
+       ID2[2] in [1..NumberSmallGroups( ID2[1] )] then
+      if ID1[1] < ID2[1] then
+        return ( ( NumberSmallGroups( ID1[1] ) - ID1[2] + 1 ) +
+               Sum( List( [ID1[1]+1..ID2[1]-1], order -> NumberSmallGroups( order ) ) ) +
+               ID2[2] );
+      elif ID1[1] = ID2[1] then
+        return ( ID2[2] - ID1[2] + 1 );
+      fi;
+    fi;
+  fi;
+
+  return [];
+
+  end;
 
 NilpClass := function( G )
 
@@ -154,6 +173,24 @@ IsExceptionalTPPSmallGroupOrder := function( order )
   end;
 
 
+ExceptionalTPPSmallGroupIndicesOfOrder := function( order )
+
+  local pos;
+
+  pos := Position( ExceptionalTPPSmallGroupOrders(), order );
+  if not pos = fail then
+    if Length( excluded_TPP_small_groups[pos] ) = 1 then
+      return [1..NumberSmallGroups( order )];
+    else
+      return excluded_TPP_small_groups[pos][2];
+    fi;
+  else
+    return [];
+  fi;
+
+  end;
+
+
 ExcludedTPPSmallGroupOrders := function()
 
   return List( Filtered( excluded_TPP_small_groups, ex_group -> Length( ex_group ) = 1 ),
@@ -169,7 +206,7 @@ IsExcludedTPPSmallGroupOrder := function( order )
   end;
 
 
-IsExcludedTPPSmallGroup := function( ID )
+IsExcludedTPPSmallGroupID := function( ID )
 
   local pos;
 
@@ -183,9 +220,9 @@ IsExcludedTPPSmallGroup := function( ID )
   end;
 
 
-WriteSmallGroupsJSONFile := function( file_dir, file_name, ID1, ID2, inc_abelian, TPP_exclusions )
+WriteGAPSmallGroupsJSONFile := function( file_dir, file_name, ID1, ID2, inc_abelian, TPP_exclusions )
 
-  local file, n, m, order, excls, i, index_range, num_small_groups, G, total_groups, total_bytes;
+  local file, n, m, order, index, index_range, i, num_small_groups, G, total_groups, total_bytes;
 
   LoadPackage( "IO" );
   file := IO_File( Concatenation( file_dir, file_name ), "w" );
@@ -195,41 +232,31 @@ WriteSmallGroupsJSONFile := function( file_dir, file_name, ID1, ID2, inc_abelian
   IO_WriteLine( file, "[" );
   n := ID1[1];
   m := ID2[1];
-  if TPP_exclusions = true then
-    excls := Filtered( [n..m], x -> not x in excls );
-    n := excls[1];
-    m := excls[Length( excls )];
-  fi;
-  index_range := [];
   for order in [n..m] do
     if n < m then
       if order = n then
-        if Length( ID1 ) = 1 then
-          index_range[1] := 1;
-        elif Length( ID1 ) = 2 then
-          index_range[1] := ID1[2];
-        fi;
-        index_range[2] := NumberSmallGroups( order );
+        index_range := [ID1[2]..NumberSmallGroups( order )];
       elif order in [n+1..m-1] then
-        index_range[1] := 1;
-        index_range[2] := NumberSmallGroups( order );
+        index_range := [1..NumberSmallGroups( order )];
       elif order = m then
-        index_range[1] := 1;
-        if Length( ID2 ) = 1 then
-          index_range[2] := NumberSmallGroups( order );
-        elif Length( ID2 ) = 2 then
-          index_range[2] := ID2[2];
-        fi;
+        index_range := [1..ID2[2]];
       fi;
     elif n = m then
-      if Length( ID1 ) = 1 then
-        index_range[1] := 1;
-      elif Length( ID2 ) = 2 then
-        index_range[1] := ID1[2];
-      fi;
-      index_range[2] := ID2[2];
+      index_range := [ID1[2]..ID2[2]];
     fi;
-    for i in [index_range[1]..index_range[2]] do
+    Print( "\n\torder=", order, ", initial index_range=", index_range );
+    if TPP_exclusions = true then
+      if not order in ExcludedTPPSmallGroupOrders() then
+        index_range := Filtered( index_range,
+                         index ->
+                         not index in ExceptionalTPPSmallGroupIndicesOfOrder( order ) );
+      else
+        Print( "\n\t", order, " is excluded from TPP search!" );
+        continue;
+      fi;
+    fi;
+    Print( "\n\t(after TPP_exclusions) index_range=", index_range );
+    for i in index_range do
       G := SmallGroup( order, i );
       if inc_abelian then
         if total_groups > 0 then
