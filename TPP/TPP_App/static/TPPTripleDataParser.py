@@ -116,8 +116,9 @@ class TPPTripleDataParser:
             ID = self.__get_HTML_table_column_value( row, 'GAP_ID' )
             ptype = self.__get_HTML_table_column_value( row, 'MBS_STPP_param_type' )
             group_rec = SmallGroup( GAP_ID=ID, order=ID[0], GAP_desc='',
-            GAP_pickled_ID='', is_abelian=None, comm_length=None, is_cyclic=None,
-            is_elem_abelian=None, is_simple=None, comp_length=None,
+            GAP_pickled_ID='', is_abelian=None, index_LAN_subgroup=None,
+            index_LCN_subgroup=None, index_LEAN_subgroup=None, comm_length=None,
+            is_cyclic=None, is_elem_abelian=None, is_simple=None, comp_length=None,
             is_nilpotent=None, nilpotency_class=None, is_solvable=None,
             derived_length=None, is_pgroup=None, generators=None,
             char_degrees=self.__get_HTML_table_column_value( row, 'char_degrees' ),
@@ -131,20 +132,58 @@ class TPPTripleDataParser:
         print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( self.small_groups ), HTML_data_file.name )
 
 
-    def write_small_groups_JSON_file( self, file_dir, file_name, indent_num ):
+    def write_small_groups_JSON_file( self, file_dir, file_name, indent_set ):
 
         with io.open( file_dir + file_name, 'w', encoding='utf-8' ) as file:
             file.write( unicode( '[\n' ) )
             for count, small_group in enumerate( self.small_groups.values() ):
                 if count:  file.write( unicode( ',\n' ) )
                 JSON_obj = json.dumps( small_group._asdict(), \
-                                       indent=indent_num, \
+                                       indent=indent_set, \
                                        ensure_ascii=False )
                 file.write( unicode( JSON_obj ) )
             file.write( unicode( '\n]' ) )
 
         print '{} small group JSON objects successfully written to the file {}.'.\
               format( len( self.small_groups ), file.name )
+
+
+    def write_small_groups_JSON_file_in_orders_list( self, file_dir, file_name, \
+                                                    orders_list, indent_set ):
+
+        with io.open( file_dir + file_name, 'w', encoding='utf-8' ) as file:
+            file.write( unicode( '[\n' ) )
+            sm_groups = filter( lambda sm_group: sm_group.order in orders_list,\
+                                self.small_groups.values() )
+            for count, sm_group in enumerate( sm_groups ):
+                if count:  file.write( unicode( ',\n' ) )
+                JSON_obj = json.dumps( sm_group._asdict(), \
+                                       indent=indent_set, \
+                                       ensure_ascii=False )
+                file.write( unicode( JSON_obj ) )
+            file.write( unicode( '\n]' ) )
+
+        print '{} small group JSON objects successfully written to the file {}.'.\
+              format( len( sm_groups ), file.name )
+
+
+    def write_small_groups_JSON_file_in_IDs_list( self, file_dir, file_name, \
+                                                  IDs_list, indent_set ):
+
+        with io.open( file_dir + file_name, 'w', encoding='utf-8' ) as file:
+            file.write( unicode( '[\n' ) )
+            sm_groups = filter( lambda sm_group: sm_group.GAP_ID in IDs_list,\
+                                self.small_groups.values() )
+            for count, sm_group in enumerate( sm_groups ):
+                if count:  file.write( unicode( ',\n' ) )
+                JSON_obj = json.dumps( sm_group._asdict(), \
+                                       indent=indent_set, \
+                                       ensure_ascii=False )
+                file.write( unicode( JSON_obj ) )
+            file.write( unicode( '\n]' ) )
+
+        print '{} small group JSON objects successfully written to the file {}.'.\
+              format( len( sm_groups ), file.name )
 
 
     def read_small_groups_JSON_file( self, file_path, source ):
@@ -187,7 +226,7 @@ class TPPTripleDataParser:
                 small_group = self.small_groups[ID]._asdict()
                 update_group = groups_updated_info[ID]._asdict()
                 for key in update_group.keys():
-                    if not key in [ 'GAP_ID', 'Beta0', 'MBS_STPP_param_type' ]:
+                    if not key in [ 'GAP_ID', 'Beta0', 'MBS_STPP_param_type', 'D3' ]:
                         small_group[key] = update_group[key]
                 small_group = collections.namedtuple( 'SmallGroup', \
                            TPPTripleDataParser.small_groups_JSON_schema.keys() )\
