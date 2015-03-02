@@ -52,5 +52,5 @@ class SmallGroup( models.Model ):
 
     # __unicode__ on Python 2
     def __str__(self):
-        return self.GAP_ID.join( '[]' )
+        return self
 

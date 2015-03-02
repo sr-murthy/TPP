@@ -198,8 +198,9 @@ class TPPTripleDataParser:
                     ID = tuple( sm_group['GAP_ID'] )
                     sm_group['GAP_ID'] = ID
                     if source in [ 'static HTML', 'JSON' ]:
-                        sm_group['MBS_STPP_param_type'] = \
-                          tuple( sm_group['MBS_STPP_param_type'] )
+                        if not sm_group['MBS_STPP_param_type'] == None:
+                            sm_group['MBS_STPP_param_type'] = \
+                              tuple( sm_group['MBS_STPP_param_type'] )
                         sm_group['index_LAN_subgroup'] = None
                         sm_group['index_LCN_subgroup'] = None
                         sm_group['index_LEAN_subgroup'] = None
