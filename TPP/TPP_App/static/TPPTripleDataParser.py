@@ -217,7 +217,7 @@ class TPPTripleDataParser:
                                ( **sm_group )
                     sm_groups.update( {ID:sm_group} )
 
-        print 'Ordered dictionary of {} named tuples of small groups loaded from JSON file {}.'.format( len( sm_groups ), file.name )
+        print 'Ordered dictionary of {} "SmallGroup" named tuples read from JSON file {}.'.format( len( sm_groups ), file.name )
         return sm_groups
 
 
@@ -238,7 +238,7 @@ class TPPTripleDataParser:
                 self.small_groups[ID] = small_group
                 count += 1
 
-        print 'Updated {} small groups in parser.'.format( count )
+        print 'Updated {} "SmallGroup" named tuples in parser.'.format( count )
 
 
     def get_small_groups( self, asdict ):
@@ -249,10 +249,12 @@ class TPPTripleDataParser:
 
     def load_small_groups( self, file_path, source ):
 
-        if source == 'JSON':
+        if source in ['JSON','GAP']:
             self.small_groups = self.read_small_groups_JSON_file( file_path, source )
         elif source == 'static HTML':
             self.small_groups = self.read_small_groups_static_HTML_file( file_path )
+
+        print 'Ordered dictionary of {} "SmallGroup" namedtuples loaded into parser from JSON file {}'.format( len( self.small_groups ), file_path )
 
 
     def __init__( self ):
