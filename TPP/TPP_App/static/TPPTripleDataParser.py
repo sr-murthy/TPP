@@ -101,9 +101,10 @@ class TPPTripleDataParser:
         return row_line
 
 
-    def get_small_groups_static_HTML_data( self, file_path ):
+    def read_small_groups_static_HTML_file( self, file_path ):
 
         HTML_data_file = open( file_path, 'r', 0 )
+        small_groups = collections.OrderedDict()
         SmallGroup = collections.namedtuple(
                   'SmallGroup', TPPTripleDataParser.small_groups_JSON_schema.keys()
                                       )
@@ -124,12 +125,14 @@ class TPPTripleDataParser:
             char_degrees=self.__get_HTML_table_column_value( row, 'char_degrees' ),
             D3=self.__get_HTML_table_column_value( row, 'D3' ),
             MBS_STPP_param_type=ptype, Beta0=ptype[0]*ptype[1]*ptype[2] )
-            self.small_groups.update( {ID:group_rec} )
+            small_groups.update( {ID:group_rec} )
             i += 1
             row = self.__get_HTML_table_row( HTML_data_file )
 
         HTML_data_file.close()
-        print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( self.small_groups ), HTML_data_file.name )
+        print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( small_groups ), HTML_data_file.name )
+
+        return small_groups
 
 
     def write_small_groups_JSON_file( self, file_dir, file_name, indent_set ):
@@ -242,6 +245,14 @@ class TPPTripleDataParser:
 
         if asdict: return self.small_groups._asdict()
         else: return self.small_groups
+
+
+    def load_small_groups( self, file_path, source ):
+
+        if source == 'JSON':
+            self.small_groups = self.read_small_groups_JSON_file( file_path, source )
+        elif source == 'static HTML':
+            self.small_groups = self.read_small_groups_static_HTML_file( file_path )
 
 
     def __init__( self ):
