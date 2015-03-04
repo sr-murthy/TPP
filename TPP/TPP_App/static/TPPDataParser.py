@@ -241,20 +241,20 @@ class TPPDataParser:
         print 'Updated {} "SmallGroup" named tuples in parser.'.format( count )
 
 
-    def get_small_groups( self, asdict ):
+    def get_small_groups( self ):
 
-        if asdict: return self.small_groups._asdict()
-        else: return self.small_groups
+        return self.small_groups
 
 
     def load_small_groups( self, file_path, source ):
 
         if source in ['JSON','GAP']:
             self.small_groups = self.read_small_groups_JSON_file( file_path, source )
+            print 'Ordered dictionary of {} "SmallGroup" namedtuples loaded into parser from JSON file {}'.format( len( self.small_groups ), file_path )
+
         elif source == 'static HTML':
             self.small_groups = self.read_small_groups_static_HTML_file( file_path )
-
-        print 'Ordered dictionary of {} "SmallGroup" namedtuples loaded into parser from JSON file {}'.format( len( self.small_groups ), file_path )
+            print 'Ordered dictionary of {} "SmallGroup" namedtuples loaded into parser from static HTML file {}'.format( len( self.small_groups ), file_path )
 
 
     def __init__( self ):
