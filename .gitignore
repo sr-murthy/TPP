@@ -1,0 +1,4 @@
+*.pyc
+settings.py
+assets/
+TPP/TPP/settings.py
