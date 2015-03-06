@@ -130,7 +130,7 @@ class TPPDataParser:
             row = self.__get_HTML_table_row( HTML_data_file )
 
         HTML_data_file.close()
-        print 'Ordered dictionary of {} named tuples of small groups created.  File {} closed.'.format( len( small_groups ), HTML_data_file.name )
+        print 'Ordered dictionary of {} "SmallGroup" namedtuples created.  File {} closed.'.format( len( small_groups ), HTML_data_file.name )
 
         return small_groups
 
