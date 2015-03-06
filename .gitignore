@@ -1,4 +1,9 @@
 *.pyc
 settings.py
 assets/
+TPP/db.sqlite3
+TPP/manage.py
 TPP/TPP/settings.py
+TPP/TPP/*.pyc
+TPP/TPP_App/admin.py
+TPP/TPP_App/*.pyc
