@@ -49,8 +49,3 @@ class SmallGroup( models.Model ):
 
     def get_MBS_STPP_param_type( self ):
         return self.MBS_STPP_param_type.join( '()' )
-
-    # __unicode__ on Python 2
-    def __str__(self):
-        return self
-
