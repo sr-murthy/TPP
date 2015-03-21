@@ -2,6 +2,7 @@
     Utility class to provide numerical information about the GAP small groups which are included/excluded from the TPP project scope.
 '''
 import collections
+from GAPSmallGroupsNumericInfo import GAPSmallGroupsNumericInfo
 
 class TPPSmallGroupsNumericInfo:
 
@@ -24,8 +25,8 @@ class TPPSmallGroupsNumericInfo:
                                   (900,'all'),(912,'all'), (928,'all'),(936,'all'),\
                                   (960,'all'),(972,'all'),(992,'all'),(1000,'all')] )
 
-    GAP_small_groups_numeric_info = \
-      GAPSmallGroupsNumericInfo.db
+
+    GAP_small_groups_numeric_info = GAPSmallGroupsNumericInfo.db
 
 
     @classmethod
