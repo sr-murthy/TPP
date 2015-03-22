@@ -1,5 +1,8 @@
 '''
-    Parser for the TPP triple raw data contained in static HTML tables containing subgroup TPP data generated from Ivo Hedtke's supercomputer GAP computations and JSON files containing GAP small groups information generated from a custom GAP script (GAPSmallGroupsJSONFileWriter.g).
+    Parser for the TPP triple raw data contained in static HTML tables containing subgroup
+    TPP data generated from Ivo Hedtke's supercomputer GAP computations and JSON files
+    containing GAP small groups information generated from a custom GAP script
+    (GAPSmallGroupsJSONFileWriter.g).
 '''
 import collections, io, json
 
@@ -196,11 +199,12 @@ class TPPDataParser:
 
         with io.open( file_path, 'r', encoding='utf-8' ) as file:
             for line in file:
-                if '{' in line and '}' in line:
+                line = line.strip( ',\n' )
+                if line.startswith( '{' ) and line.endswith( '}' ):
                     sm_group = decoder.raw_decode( line )[0]
                     ID = tuple( sm_group['GAP_ID'] )
                     sm_group['GAP_ID'] = ID
-                    if source in [ 'static HTML', 'JSON' ]:
+                    if source in ['static HTML', 'JSON']:
                         if not sm_group['MBS_STPP_param_type'] == None:
                             sm_group['MBS_STPP_param_type'] = \
                               tuple( sm_group['MBS_STPP_param_type'] )
