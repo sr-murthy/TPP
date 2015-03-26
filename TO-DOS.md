@@ -16,4 +16,8 @@ Planned/in-progress/pending actions will be listed and described here, with a ro
 
    5. **Designing and implementing app database schema**.  This will describe and implement the schema for the core tables of the database, of which there will be at least ~~three~~ one initially, namely  `small_groups` which stores essential group-theoretic information about GAP small groups including the subgroup TPP capacity (Beta_0), the parameter type of a maximum-by-size (MBS) subgroup TPP triple, and its D3 (sum of cubes of character degrees).  The project database system is SQLite3 and changes to the schema and data in the database will be effected via the `makemigration` and `migrate` tools provided by Django.  ~~*To be finished by Mar. 21, 2015*.~~ DONE, 25/02/2015
 
-   6. **Writing custom Django scripts for populating the database**.  This will be done as a data migration using the Django `Migration` class.  It involves writing a custom method for populating the `small_groups` db table with the data contained in the JSON files, listing the method as an operation in a data migration class that calls the `RunPython` tool, and then running the migration using `python manage.py migrate`.  *To be finished by Apr. 1, 2015*.
+   6. **Writing custom Django scripts for populating the database**.  This will be done as a data migration using the Django `Migration` class.  It involves writing a custom method for populating the `small_groups` db table with the data contained in the JSON files, listing the method as an operation in a data migration class that calls the `RunPython` tool, and then running the migration using `python manage.py migrate`.  ~~*To be finished by Apr. 1, 2015*.~~ DONE, 26/03/2015
+
+   7. **Setting up the admin users and site**.  *To be finished by Apr. 1, 2015*
+
+   8. **Designing and implementing views**.  *To be finished by Apr. 14, 2015*
