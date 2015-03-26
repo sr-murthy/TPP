@@ -208,9 +208,6 @@ class TPPDataParser:
                         if not sm_group['MBS_STPP_param_type'] == None:
                             sm_group['MBS_STPP_param_type'] = \
                               tuple( sm_group['MBS_STPP_param_type'] )
-                        sm_group['index_LAN_subgroup'] = None
-                        sm_group['index_LCN_subgroup'] = None
-                        sm_group['index_LEAN_subgroup'] = None
                     elif source == 'GAP':
                         sm_group['order'] = ID[0]
                         sm_group['D3'] = None
@@ -245,9 +242,14 @@ class TPPDataParser:
         print 'Updated {} "SmallGroup" named tuples in parser.'.format( count )
 
 
-    def get_small_groups( self ):
+    def get_small_groups_asdict( self ):
 
         return self.small_groups
+
+
+    def get_small_groups_aslist( self ):
+
+        return self.small_groups.values()
 
 
     def load_small_groups( self, file_path, source ):
@@ -259,6 +261,10 @@ class TPPDataParser:
         elif source == 'static HTML':
             self.small_groups = self.read_small_groups_static_HTML_file( file_path )
             print 'Ordered dictionary of {} "SmallGroup" namedtuples loaded into parser from static HTML file {}'.format( len( self.small_groups ), file_path )
+
+    def get_small_groups_JSON_fields( self ):
+
+        return self.small_groups_JSON_schema.keys()
 
 
     def __init__( self ):

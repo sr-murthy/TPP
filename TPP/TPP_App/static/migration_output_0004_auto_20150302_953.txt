@@ -1,0 +1,232 @@
+[srm@~/Documents/sandeep/cst/dev/TPP/TPP]$ python manage.py migrate TPP_App 0004_auto_20150302_0953
+Operations to perform:
+  Target specific migration: 0004_auto_20150302_0953, from TPP_App
+Running migrations:
+  Applying TPP_App.0004_auto_20150302_0953...
+Populating db table smallgroup with JSON test data ...
+
+Getting smallgroup model from versioned app registry ...
+
+Getting list of JSON data files names from app static/ subdirectory ...
+[u'0001_SmallGroupsData_Order1-35.json', u'0002_SmallGroupsData_Order36-127.json', u'0003_SmallGroupsData_Order128.json', u'0004_SmallGroupsData_Order129-191.json', u'0005_SmallGroupsData_Order192.json', u'0006_SmallGroupsData_Order193-255.json', u'0007_SmallGroupsData_Order256Indices1-5000.json', u'0008_SmallGroupsData_Order256Indices5001-10000.json', u'0009_SmallGroupsData_Order256Indices10001-15000.json', u'0010_SmallGroupsData_Order256Indices15001-20000.json', u'0011_SmallGroupsData_Order256Indices20001-25000.json', u'0012_SmallGroupsData_Order256Indices25001-56092.json', u'0013_SmallGroupsData_Order257-287.json', u'0014_SmallGroupsData_Order288.json', u'0015_SmallGroupsData_Order289-319.json', u'0015_SmallGroupsData_Order320.json', u'0015_SmallGroupsData_Order321-383.json', u'0016_SmallGroupsData_Order384.json', u'0017_SmallGroupsData_Order385-511.json', u'0018_SmallGroupsData_Order513-575.json', u'0019_SmallGroupsData_Order576-700.json', u'0020_SmallGroupsData_Order701-800.json', u'0021_SmallGroupsData_Order801-900.json', u'0022_SmallGroupsData_Order901-1000.json']
+
+Getting parser to handle the JSON subgroup TPP data ...
+Creating a new TPPDataParser instance ...
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0001_SmallGroupsData_Order1-35.json
+Ordered dictionary of 148 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0001_SmallGroupsData_Order1-35.json.
+Ordered dictionary of 148 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0001_SmallGroupsData_Order1-35.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+148 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0002_SmallGroupsData_Order36-127.json
+Ordered dictionary of 946 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0002_SmallGroupsData_Order36-127.json.
+Ordered dictionary of 946 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0002_SmallGroupsData_Order36-127.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+946 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0003_SmallGroupsData_Order128.json
+Ordered dictionary of 2312 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0003_SmallGroupsData_Order128.json.
+Ordered dictionary of 2312 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0003_SmallGroupsData_Order128.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+2312 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0004_SmallGroupsData_Order129-191.json
+Ordered dictionary of 731 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0004_SmallGroupsData_Order129-191.json.
+Ordered dictionary of 731 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0004_SmallGroupsData_Order129-191.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+731 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0005_SmallGroupsData_Order192.json
+Ordered dictionary of 1530 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0005_SmallGroupsData_Order192.json.
+Ordered dictionary of 1530 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0005_SmallGroupsData_Order192.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+1530 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0006_SmallGroupsData_Order193-255.json
+Ordered dictionary of 906 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0006_SmallGroupsData_Order193-255.json.
+Ordered dictionary of 906 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0006_SmallGroupsData_Order193-255.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+906 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0007_SmallGroupsData_Order256Indices1-5000.json
+Ordered dictionary of 4993 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0007_SmallGroupsData_Order256Indices1-5000.json.
+Ordered dictionary of 4993 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0007_SmallGroupsData_Order256Indices1-5000.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+4993 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0008_SmallGroupsData_Order256Indices5001-10000.json
+Ordered dictionary of 4836 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0008_SmallGroupsData_Order256Indices5001-10000.json.
+Ordered dictionary of 4836 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0008_SmallGroupsData_Order256Indices5001-10000.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+4836 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0009_SmallGroupsData_Order256Indices10001-15000.json
+Ordered dictionary of 4610 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0009_SmallGroupsData_Order256Indices10001-15000.json.
+Ordered dictionary of 4610 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0009_SmallGroupsData_Order256Indices10001-15000.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+4610 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0010_SmallGroupsData_Order256Indices15001-20000.json
+Ordered dictionary of 4221 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0010_SmallGroupsData_Order256Indices15001-20000.json.
+Ordered dictionary of 4221 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0010_SmallGroupsData_Order256Indices15001-20000.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+4221 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0011_SmallGroupsData_Order256Indices20001-25000.json
+Ordered dictionary of 4523 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0011_SmallGroupsData_Order256Indices20001-25000.json.
+Ordered dictionary of 4523 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0011_SmallGroupsData_Order256Indices20001-25000.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+4523 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0012_SmallGroupsData_Order256Indices25001-56092.json
+Ordered dictionary of 3915 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0012_SmallGroupsData_Order256Indices25001-56092.json.
+Ordered dictionary of 3915 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0012_SmallGroupsData_Order256Indices25001-56092.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+3915 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0013_SmallGroupsData_Order257-287.json
+Ordered dictionary of 200 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0013_SmallGroupsData_Order257-287.json.
+Ordered dictionary of 200 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0013_SmallGroupsData_Order257-287.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+200 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0014_SmallGroupsData_Order288.json
+Ordered dictionary of 1029 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0014_SmallGroupsData_Order288.json.
+Ordered dictionary of 1029 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0014_SmallGroupsData_Order288.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+1029 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order289-319.json
+Ordered dictionary of 214 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order289-319.json.
+Ordered dictionary of 214 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order289-319.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+214 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order320.json
+Ordered dictionary of 1268 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order320.json.
+Ordered dictionary of 1268 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order320.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+1268 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order321-383.json
+Ordered dictionary of 1000 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order321-383.json.
+Ordered dictionary of 1000 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0015_SmallGroupsData_Order321-383.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+1000 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0016_SmallGroupsData_Order384.json
+Ordered dictionary of 1331 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0016_SmallGroupsData_Order384.json.
+Ordered dictionary of 1331 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0016_SmallGroupsData_Order384.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+1331 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0017_SmallGroupsData_Order385-511.json
+Ordered dictionary of 2407 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0017_SmallGroupsData_Order385-511.json.
+Ordered dictionary of 2407 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0017_SmallGroupsData_Order385-511.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+2407 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0018_SmallGroupsData_Order513-575.json
+Ordered dictionary of 750 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0018_SmallGroupsData_Order513-575.json.
+Ordered dictionary of 750 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0018_SmallGroupsData_Order513-575.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+750 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0019_SmallGroupsData_Order576-700.json
+Ordered dictionary of 2946 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0019_SmallGroupsData_Order576-700.json.
+Ordered dictionary of 2946 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0019_SmallGroupsData_Order576-700.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+2946 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0020_SmallGroupsData_Order701-800.json
+Ordered dictionary of 2413 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0020_SmallGroupsData_Order701-800.json.
+Ordered dictionary of 2413 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0020_SmallGroupsData_Order701-800.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+2413 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0021_SmallGroupsData_Order801-900.json
+Ordered dictionary of 1231 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0021_SmallGroupsData_Order801-900.json.
+Ordered dictionary of 1231 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0021_SmallGroupsData_Order801-900.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+1231 SmallGroup objects successfully inserted and saved into smallgroups table
+Opening file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0022_SmallGroupsData_Order901-1000.json
+Ordered dictionary of 564 "SmallGroup" named tuples read from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0022_SmallGroupsData_Order901-1000.json.
+Ordered dictionary of 564 "SmallGroup" namedtuples loaded into parser from JSON file /Users/srm/Documents/sandeep/cst/dev/TPP/TPP/TPP_App/static/0022_SmallGroupsData_Order901-1000.json
+
+Creating list of smallgroup model objects for bulk insertion ...
+
+Doing the bulk insertion ...
+
+564 SmallGroup objects successfully inserted and saved into smallgroups table
+Bulk insertion done ... a total of 49024 SmallGroup objects successfully inserted and saved into smallgroups table
+ OK

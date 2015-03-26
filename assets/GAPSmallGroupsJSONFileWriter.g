@@ -94,7 +94,7 @@ IndexLargestCyclicNormalSubgroup := function( G )
               H -> IsCyclic( H ) and IsNormal( G, H ) and Order( H ) > 1 ),
               K -> IndexNC( G, K ) );
   if li = [] then
-    return "null";
+    return Order( G );
   else
     return li[Length( li )];
   fi;
