@@ -39,13 +39,26 @@ class SmallGroup( models.Model ):
     char_degrees = models.CharField( max_length=250, null=False, \
                                    verbose_name="Character degrees and multiplicities" )
     D3 = models.IntegerField( null=False, \
-                              verbose_name="Sum of cubes of character degrees" )
+                              verbose_name="Sum of cubes of character degrees (D3)" )
     MBS_STPP_param_type = models.CommaSeparatedIntegerField( max_length=16, null=False, \
-                    verbose_name="Maximum-by-size subgroup TPP triple parameter type" )
-    Beta0 = models.IntegerField( null=False, verbose_name="Subgroup TPP capacity" )
+                    verbose_name="Maximum-by-size (MBS) subgroup TPP (STPP) triple type" )
+    Beta0 = models.IntegerField( null=False, verbose_name="Subgroup TPP capacity (B0)" )
 
-    def get_GAP_ID( self ):
+    def get_GAP_ID_asstring( self ):
+
         return self.GAP_ID.join( '[]' )
 
-    def get_MBS_STPP_param_type( self ):
+    def get_GAP_ID_asnumeric( self ):
+
+        return [int( token.strip( ' ' ) ) for token in self.GAP_ID.split( ',' )]
+
+    def get_MBS_STPP_param_type_asstring( self ):
+
         return self.MBS_STPP_param_type.join( '()' )
+
+    # returns a numeric tuple for MBS_STPP_param_type
+    def get_MBS_STPP_param_type_asnumeric( self ):
+
+        return tuple( [int( token.strip( ' ' ) ) \
+                       for token in self.MBS_STPP_param_type.split( ',' )] )
+

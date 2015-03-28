@@ -1,0 +1,7 @@
+[srm@~/Documents/sandeep/cst/dev/TPP/TPP]$ python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, contenttypes, sessions, auth, TPP_App
+Running migrations:
+  Applying TPP_App.0007_auto_20150328_1826...Changing the sort order of the MBS_STPP_param_type field of SmallGroup model objects, e.g. (1,2,3) will become (3,2,1)
+MBS_STPP_param_type field updated in 47222 SmallGroup objects
+ OK

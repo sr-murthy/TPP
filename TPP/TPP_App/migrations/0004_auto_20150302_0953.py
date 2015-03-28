@@ -71,6 +71,7 @@ def populate_smallgroups_table( apps, schema_editor ):
 
     print 'Bulk insertion done ... a total of {} SmallGroup objects successfully inserted and saved into smallgroups table'.format( SmallGroup.objects.count() )
 
+
 class Migration( migrations.Migration ):
 
     dependencies = [
