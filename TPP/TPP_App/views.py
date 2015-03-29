@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+def welcome( request ):
+    return HttpResponse( 'Welcome to the TPP app!' )
+
+def small_group_info( request, GAP_ID ):
+    return HttpResponse( 'Info request for small group with GAP ID {}'.format( GAP_ID ) )
+
+
+
