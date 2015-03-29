@@ -5,7 +5,7 @@ A Python/Django web application for querying, displaying and filtering informati
 
 This information was originally in a "raw" dataset, to be precise, several HTML tables containing around 50,000 records - <a href="http://www2.informatik.uni-halle.de/da/hedtke/tpp/" target="_blank">get it here</a>.
 
-It is now contained in several JSON files in this GitHub repo's subdirectory https://github.com/sr-murthy/TPP/tree/master/TPP/TPP_App/static.
+It is now contained in several JSON files in this GitHub repo's subdirectory <a href="https://github.com/sr-murthy/TPP/tree/master/TPP/TPP_App/static" target="_blank">here</a>.
 
 The dataset was extracted from the <a href="http://gap-system.org/Packages/sgl.html" target="_blank">Small Groups data library</a> of the <a href="http://gap-system.org" target="_blank">GAP computer algebra system</a> by fast search programs written in the GAP programming language - <a href="http://www2.informatik.uni-halle.de/da/hedtke/tpp/algorithms.txt" target="">get the source code</a>.
 
