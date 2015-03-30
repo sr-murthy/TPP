@@ -9,29 +9,123 @@ import collections, io, json
 class TPPDataParser:
 
     small_groups_JSON_schema = {
-      'GAP_ID': { 'JSON_type': 'array', 'python_type': tuple, 'length': 2 },
-      'order': { 'JSON_type': 'number', 'python_type': int },
-      'GAP_desc': { 'JSON_type': 'string', 'python_type': str },
-      'GAP_pickled_ID': { 'JSON_type': 'string', 'python_type': str },
-      'index_LAN_subgroup': { 'JSON_type': 'number', 'python_type': int },
-      'index_LCN_subgroup': { 'JSON_type': 'number', 'python_type': int },
-      'index_LEAN_subgroup': { 'JSON_type': 'number', 'python_type': int },
-      'is_abelian': { 'JSON_type': 'boolean', 'python_type': bool },
-      'comm_length': { 'JSON_type': 'number', 'python_type': int },
-      'is_cyclic': { 'JSON_type': 'boolean', 'python_type': bool },
-      'is_elem_abelian': { 'JSON_type': 'boolean', 'python_type': bool },
-      'is_simple': { 'JSON_type': 'boolean', 'python_type': bool },
-      'comp_length': { 'JSON_type': 'number', 'python_type': int },
-      'is_nilpotent': { 'JSON_type': 'boolean', 'python_type': bool },
-      'nilpotency_class': { 'JSON_type': 'number', 'python_type': int },
-      'is_solvable': { 'JSON_type': 'boolean', 'python_type': bool },
-      'derived_length': { 'JSON_type': 'number', 'python_type': int },
-      'is_pgroup': { 'JSON_type': 'boolean', 'python_type': bool },
-      'generators': { 'JSON_type': 'string', 'python_type': str },
-      'char_degrees': { 'JSON_type': 'string', 'python_type': str },
-      'D3': { 'JSON_type': 'number', 'python_type': int },
-      'MBS_STPP_param_type': { 'JSON_type': 'array', 'python_type': tuple, 'length': 3 },
-      'Beta0': { 'JSON_type': 'number', 'python_type': int }
+      'GAP_ID': {
+          'JSON_type': 'array', \
+          'python_type': tuple, \
+          'length': 2, \
+          'verbose_name': 'GAP small group ID'
+      }, \
+      'order': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Group order'
+      },
+      'GAP_desc': {
+          'JSON_type': 'string', \
+          'python_type': str, \
+          'verbose_name': 'GAP structure description'
+      },
+      'GAP_pickled_ID': {
+          'JSON_type': 'string', \
+          'python_type': str, \
+          'verbose_name': 'GAP pickled string representation'
+      },
+      'index_LAN_subgroup': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Index of a largest abelian normal subgroup'
+      },
+      'index_LCN_subgroup': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Index of a largest cyclic normal subgroup'
+       },
+      'index_LEAN_subgroup': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Index of a largest elementary abelian normal subgroup'
+       },
+      'is_abelian': {
+          'JSON_type': 'boolean', \
+          'python_type': bool, \
+          'verbose_name': 'Abelian group?'
+       },
+      'comm_length': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Commutator length'
+       },
+      'is_cyclic': {
+          'JSON_type': 'boolean',
+          'python_type': bool, \
+          'verbose_name': 'Is cyclic?'
+       },
+      'is_elem_abelian': {
+          'JSON_type': 'boolean', \
+          'python_type': bool, \
+          'verbose_name': 'Is elementary abelian?'
+       },
+      'is_simple': {
+          'JSON_type': 'boolean', \
+          'python_type': bool, \
+          'verbose_name': 'Is simple?'
+       },
+      'comp_length': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Composition length'
+       },
+      'is_nilpotent': {
+          'JSON_type': 'boolean', \
+          'python_type': bool, \
+          'verbose_name': 'Is nilpotent?'
+       },
+      'nilpotency_class': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Nilpotency class'
+       },
+      'is_solvable': {
+          'JSON_type': 'boolean', \
+          'python_type': bool, \
+          'verbose_name': 'Is solvable?'
+       },
+      'derived_length': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Derived length'
+       },
+      'is_pgroup': {
+          'JSON_type': 'boolean', \
+          'python_type': bool, \
+          'verbose_name': 'Is p-group?'
+       },
+      'generators': {
+          'JSON_type': 'string', \
+          'python_type': str, \
+          'verbose_name': 'Generators and orders'
+       },
+      'char_degrees': {
+          'JSON_type': 'string', \
+          'python_type': str, \
+          'verbose_name': 'Character degrees and multiplicities'
+       },
+      'D3': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Sum of cubes of character degrees (D3)'
+       },
+      'MBS_STPP_param_type': {
+          'JSON_type': 'array', \
+          'python_type': tuple, \
+          'length': 3, \
+          'verbose_name': 'Maximum-by-size (MBS) subgroup TPP (STPP) triple type'
+       },
+      'Beta0': {
+          'JSON_type': 'number', \
+          'python_type': int, \
+          'verbose_name': 'Subgroup TPP capacity (B0)'
+       }
     }
 
 
@@ -204,7 +298,7 @@ class TPPDataParser:
                     sm_group = decoder.raw_decode( line )[0]
                     ID = tuple( sm_group['GAP_ID'] )
                     sm_group['GAP_ID'] = ID
-                    if source in ['static HTML', 'JSON']:
+                    if source in ['static HTML']:
                         if not sm_group['MBS_STPP_param_type'] == None:
                             sm_group['MBS_STPP_param_type'] = \
                               tuple( sm_group['MBS_STPP_param_type'] )
@@ -261,6 +355,12 @@ class TPPDataParser:
         elif source == 'static HTML':
             self.small_groups = self.read_small_groups_static_HTML_file( file_path )
             print 'Ordered dictionary of {} "SmallGroup" namedtuples loaded into parser from static HTML file {}'.format( len( self.small_groups ), file_path )
+
+
+    def get_small_groups_JSON_schema( self ):
+
+        return self.small_groups_JSON_schema
+
 
     def get_small_groups_JSON_fields( self ):
 
