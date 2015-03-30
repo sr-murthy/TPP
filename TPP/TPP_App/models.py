@@ -62,3 +62,7 @@ class SmallGroup( models.Model ):
         return tuple( [int( token.strip( ' ' ) ) \
                        for token in self.MBS_STPP_param_type.split( ',' )] )
 
+    def __unicode__( self ):
+
+        return 'GAP ID: {}, GAP structure description: {}, Order: {}, Index of a largest abelian normal (LAN) subgroup: {}, Index of a largest cyclic normal (LCN) subgroup: {}, Index of a largest elementary abelian normal (LEAN) subgroup: {}, Is abelian: {}, Commutator length: {}, Is cyclic: {}, Is elementary abelian: {}, Is simple: {}, Composition length: {}, Is nilpotent: {}, Nilpotency class: {}, Is solvable: {}, Derived length: {}, Is p-group: {}, Generators and orders: {}, Character degrees and multiplicities: {}, Sum of cubes of character degrees (D3): {}, Maximal-by-size(MBS) subgroup TPP (STPP) triple type: {}, Subgroup TPP capacity (B0): {}'.format( self.get_GAP_ID_asstring(), self.GAP_desc, self.order, self.index_LAN_subgroup, self.index_LCN_subgroup, self.index_LEAN_subgroup, self.is_abelian, self.comm_length, self.is_cyclic, self.is_elem_abelian, self.is_simple, self.comp_length, self.is_nilpotent, self.nilpotency_class, self.is_solvable, self.derived_length, self.is_pgroup, self.generators, self.char_degrees, self.D3, self.get_MBS_STPP_param_type_asstring(), self.Beta0 )
+

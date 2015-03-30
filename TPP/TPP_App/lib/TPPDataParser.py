@@ -8,7 +8,7 @@ import collections, io, json
 
 class TPPDataParser:
 
-    small_groups_JSON_schema = {
+    small_groups_JSON_schema = collections.OrderedDict( {
       'GAP_ID': {
           'JSON_type': 'array', \
           'python_type': tuple, \
@@ -126,7 +126,7 @@ class TPPDataParser:
           'python_type': int, \
           'verbose_name': 'Subgroup TPP capacity (B0)'
        }
-    }
+    } )
 
 
     def __get_HTML_table_column_indices( self, row, count ):
