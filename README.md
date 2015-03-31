@@ -16,7 +16,7 @@ triples and an application for 5 x 5 matrix multiplication’, Groups - Complexi
 
 2. S. Murthy & M. Lång, 'The Triple Product Ratio and Groups with Abelian Normal Subgroups of Prime Index', private research note, Jul. 2014.
 
-3. I. Hedtke, S. Murthy, ’Search and test algorithms for triple product property triples’, Groups - Complexity - Cryptology, 4(1): 111-133, 2012.
+3. I. Hedtke, S. Murthy, ’Search and test algorithms for triple product property triples’, Groups - Complexity - Cryptology, DOI: http://dx.doi.org/10.1515/gcc-2012-0006, 4(1): 111-133, 2012.
 
 4. Peter M. Neumann, ’A note on the triple product property for subsets of finite groups’, LMS J. Computation and Mathematics, 14:232-237, 2011.
 
