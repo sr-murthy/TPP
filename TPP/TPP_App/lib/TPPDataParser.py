@@ -14,7 +14,7 @@ class TPPDataParser:
           'python_type': tuple, \
           'length': 2, \
           'verbose_name': 'GAP small group ID'
-      }, \
+      },
       'order': {
           'JSON_type': 'number', \
           'python_type': int, \
