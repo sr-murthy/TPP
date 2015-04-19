@@ -20,4 +20,4 @@ Planned/in-progress/pending actions will be listed and described here, with a ro
 
    7. **Setting up the admin users and site**.  *To be finished by Apr. 1, 2015*
 
-   8. **Designing and implementing views**.  *To be finished by Apr. 14, 2015*
+   8. **Designing and implementing views**.  *To be finished by May 7, 2015*
