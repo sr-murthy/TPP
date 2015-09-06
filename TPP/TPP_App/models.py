@@ -4,7 +4,7 @@ class SmallGroup( models.Model ):
 
     GAP_ID = models.CommaSeparatedIntegerField( max_length=14, primary_key=True,\
                                                 verbose_name="GAP small group ID" )
-    order = models.IntegerField( null=False, verbose_name="Group order" )
+    ordr = models.IntegerField( null=False, verbose_name="Group order" )
     GAP_desc = models.CharField( max_length=100, null=False, \
                                  verbose_name="GAP structure description" )
     GAP_pickled_ID = models.CharField( max_length=250, null=True, \
