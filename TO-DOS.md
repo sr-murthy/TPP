@@ -18,6 +18,6 @@ Planned/in-progress/pending actions will be listed and described here, with a ro
 
    6. **Writing custom Django scripts for populating the database**.  This will be done as a data migration using the Django `Migration` class.  It involves writing a custom method for populating the `small_groups` db table with the data contained in the JSON files, listing the method as an operation in a data migration class that calls the `RunPython` tool, and then running the migration using `python manage.py migrate`.  ~~*To be finished by Apr. 1, 2015*.~~ DONE, 26/03/2015
 
-   7. **Setting up the admin users and site**.  *To be finished by Aug. 1, 2015*.
+   7. **Setting up the admin users and site**.  *To be finished by Sep. 14, 2015*.
 
-   8. **Designing and implementing views**.  *To be finished by Aug. 21, 2015*.
+   8. **Designing and implementing views**.  *To be finished by Oct. 1, 2015*.
