@@ -1,7 +1,7 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
-from TPP_App import views
+from . import views
 
-urlpatterns = patterns( '',
-    url( r'^$', views.welcome, name='welcome' ),
-)
+urlpatterns = [
+    url(r'^$', views.welcome, name='welcome'),
+]
