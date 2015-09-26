@@ -62,9 +62,10 @@ class SmallGroup( models.Model ):
         return tuple( [int( token.strip( ' ' ) ) \
                        for token in self.MBS_STPP_param_type.split( ',' )] )
 
-    def get_subgroup_TPP_ratio( self ):
+    # returns the subgroup TPP ratio of this group, formula is Beta0 / order
+    def get_rho0( self ):
 
-        return float( self.Beta0 / self.order )
+        return float( self.Beta0 ) / self.ordr
 
     def __unicode__( self ):
 
