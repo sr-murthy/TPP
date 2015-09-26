@@ -1,5 +1,5 @@
 from django.contrib import admin
-from TPP_App.models import SmallGroup
+from .models import SmallGroup
 
 # Register your models here.
 class SmallGroupAdmin( admin.ModelAdmin ):
