@@ -9,7 +9,7 @@ def welcome( request ):
 # and Y is the index of this group in the collection of GAP small groups of this order.
 # e.g. GAP_ID = '6, 1' refers to the symmetric group of order 3! = 6, commonly denoted as Sym_3.
 def small_group_info( request, GAP_ID ):
-    return HttpResponse( SmallGroup.objects.get( GAP_ID=GAP_ID ) )
+    return HttpResponse( SmallGroup.objects.get( GAP_ID=GAP_ID.replace(',', ', ') ) )
 
 
 
