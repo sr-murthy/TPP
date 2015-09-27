@@ -44,30 +44,40 @@ class SmallGroup( models.Model ):
                     verbose_name="Maximum-by-size (MBS) subgroup TPP (STPP) triple type" )
     Beta0 = models.IntegerField( null=False, verbose_name="Subgroup TPP capacity (B0)" )
 
-    def get_GAP_ID_asstring( self ):
+    @property
+    def GAP_ID_string( self ):
 
         return self.GAP_ID.join( '[]' )
 
-    def get_GAP_ID_asnumeric( self ):
+    @property
+    def GAP_ID_numeric( self ):
 
-        return [int( token.strip( ' ' ) ) for token in self.GAP_ID.split( ',' )]
+        return tuple([int( token.strip( ' ' ) ) for token in self.GAP_ID.split( ',' )])
 
-    def get_MBS_STPP_param_type_asstring( self ):
+    @property
+    def GAP_ID_TPPApp_format(self):
+ 
+        return self.GAP_ID.join('[]')
+
+    @property
+    def MBS_STPP_param_type_string( self ):
 
         return self.MBS_STPP_param_type.join( '()' )
 
     # returns a numeric tuple for MBS_STPP_param_type
-    def get_MBS_STPP_param_type_asnumeric( self ):
+    @property
+    def MBS_STPP_param_type_numeric( self ):
 
         return tuple( [int( token.strip( ' ' ) ) \
                        for token in self.MBS_STPP_param_type.split( ',' )] )
 
-    # returns the subgroup TPP ratio of this group, formula is Beta0 / order
-    def get_rho0( self ):
+    # returns the subgroup TPP ratio of this group - the formula is (group Beta0 / group order)
+    @property
+    def rho0( self ):
 
         return float( self.Beta0 ) / self.ordr
 
     def __unicode__( self ):
 
-        return 'GAP ID: {}, GAP structure description: {}, Order: {}, Index of a largest abelian normal (LAN) subgroup: {}, Index of a largest cyclic normal (LCN) subgroup: {}, Index of a largest elementary abelian normal (LEAN) subgroup: {}, Is abelian: {}, Commutator length: {}, Is cyclic: {}, Is elementary abelian: {}, Is simple: {}, Composition length: {}, Is nilpotent: {}, Nilpotency class: {}, Is solvable: {}, Derived length: {}, Is p-group: {}, Generators and orders: {}, Character degrees and multiplicities: {}, Sum of cubes of character degrees (D3): {}, Maximal-by-size(MBS) subgroup TPP (STPP) triple type: {}, Subgroup TPP capacity (B0): {}'.format( self.get_GAP_ID_asstring(), self.GAP_desc, self.ordr, self.index_LAN_subgroup, self.index_LCN_subgroup, self.index_LEAN_subgroup, self.is_abelian, self.comm_length, self.is_cyclic, self.is_elem_abelian, self.is_simple, self.comp_length, self.is_nilpotent, self.nilpotency_class, self.is_solvable, self.derived_length, self.is_pgroup, self.generators, self.char_degrees, self.D3, self.get_MBS_STPP_param_type_asstring(), self.Beta0 )
+        return 'GAP ID: {}, GAP structure description: {}, order: {}, index of a largest abelian normal (LAN) subgroup: {}, index of a largest cyclic normal (LCN) subgroup: {}, index of a largest elementary abelian normal (LEAN) subgroup: {}, is abelian: {}, commutator length: {}, is cyclic: {}, is elementary abelian: {}, is simple: {}, composition length: {}, is nilpotent: {}, nilpotency class: {}, is solvable: {}, derived length: {}, is p-group: {}, generators and orders: {}, character degrees and multiplicities: {}, sum of cubes of character degrees (D3): {}, maximal-by-size(MBS) subgroup TPP (STPP) triple type: {}, subgroup TPP capacity (B0): {} \n'.format( self.GAP_ID_string, self.GAP_desc, self.ordr, self.index_LAN_subgroup, self.index_LCN_subgroup, self.index_LEAN_subgroup, self.is_abelian, self.comm_length, self.is_cyclic, self.is_elem_abelian, self.is_simple, self.comp_length, self.is_nilpotent, self.nilpotency_class, self.is_solvable, self.derived_length, self.is_pgroup, self.generators, self.char_degrees, self.D3, self.MBS_STPP_param_type_string, self.Beta0 )
 
