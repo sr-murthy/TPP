@@ -1,4 +1,4 @@
-Repository of Code and Data for the TPP Triples Search Computational Project
+Repository of Code and Data for the TPP Triples Computational Search Project
 ============================================================================
 
 The [GAP system](https://www.gap-system.org/) code and data in this repository are related to an extensive computational search project for triple product property (TPP) triples of finite groups carried out in 2011-2012 as part of a research project for the jointly-authored and published paper with I. Hedkte:
@@ -32,7 +32,7 @@ In 2026 the author created a single "master" CSV file, [`master_subgroup_tpp_dat
 * `'gap_desc'` - the GAP structure description of the small group.
 * `'beta0'` - the subgroup TPP capacity $\beta_0(G) \geq |G|$ of the group $G$.
 * `'rho0'` - the subgroup TPP ratio $\rho_0(G) = \frac{\beta_0(G)}{|G|} \geq 1$ of the group $G$.
-* `'mbs_tpp_params'` - the parameters (or parameter type) $(|S|, |T|, |U|)$ of a (not necessarily unique) maximal-by-size (MBS) subgroup TPP triple $(S, T, U)$ of $G$. This means $(S, T, U)$ satisfies $\frac{|S||T||U|}{|G|} = \rho_0(G)$.
+* `'mbs_tpp_params'` - the parameters (or parameter type) $(|S|, |T|, |U|)$ of a (not necessarily unique) maximal-by-size (MBS) subgroup TPP triple $(S, T, U)$ of $G$. This means that $S, T, U$ are subgroups of $G$ satisfying the TPP and $\frac{|S||T||U|}{|G|} = \rho_0(G)$.
 * `'group_gens'` - a list of generators of $G$, given as a list of pairs, each pair consisting of a generator and its group order.
 * `'is_abelian'` - whether $G$ is abelian.
 * `'is_elem_abelian'` - whether $G$ is elementary abelian.
@@ -43,19 +43,19 @@ In 2026 the author created a single "master" CSV file, [`master_subgroup_tpp_dat
 * `'is_pgroup'` - whether $G$ is a $p$-group (a group of prime power order for some prime $p$).
 * `'is_simple'` - whether $G$ is a simple group (contains no nontrivial normal subgroups besides the trivial group $\{1\}$ and $G$ itself).
 * `'composition_length'` - the length of a composition series of $G$.
-* `'is_nilpotent'` - whether $G$ is nilpotent, in the sense of having a central series of finite minimal length.
+* `'is_nilpotent'` - whether $G$ is nilpotent, in the sense of having a central series of finite length.
 * `'nilpotency_class'` - the nilpotency class of $G$, if $G$ is in fact nilpotent.
 * `'is_solvable'` - whether $G$ is a solvable group, in the sense of having a derived/commutator series that terminates in the trivial group $\{1\}$.
 * `'commutator_length'` - the commutator length of $G$ (the smallest $n \geq 1$ such that each element in the commutator subgroup $G' = [G, G]$ can be written as a product of at most $n$
 commutators of elements in G).
-* `'derived_length'` - the derived length of $G$ (the length of the derived series of $G$).
+* `'derived_length'` - the derived length of $G$ **if** it is solvable (the length of the derived series of $G$ **when $G$ is solvable**).
 * `'character_degrees'` - the multiset $\{\chi(1) \mathrel | \chi \in \text{Irr}(G)\}$ of (complex, irreducible) character degrees of $G$.
-* `'D3'` - the sum of cubes $\sum_{\chi \in \text{Irr}(G)} \chi(1)^3$ of the character degrees of $G$
+* `'D3'` - the quantity $D_3(G) = \sum_{\chi \in \text{Irr}(G)} \chi(1)^3$ of the character degrees of $G$ (also called the $3$-character capacity of $G$).
 
 Search Software & Infrastructure
 --------------------------------
 
-The TPP test and search code was written in the [GAP system](https://www.gap-system.org/) language, but the repository does not contain this actual TPP test and search code as it is no longer accessible by the author. But it can be inferred from descriptions of the underlying test and search algorithms given in the paper above.
+The TPP test and search code was written in the [GAP system](https://www.gap-system.org/) language, but the repository does not contain this code as it is no longer accessible by the author. But it can be inferred from the very clear descriptions of the underlying test and search algorithms given in the paper above.
 
 The GAP system version used for this particular project was 4.4.12 (2008).
 
