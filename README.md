@@ -70,7 +70,7 @@ The original paper introducing TPP triples can be found here:
 
 Further papers and preprints on this topic involving the author are listed below (in descending chronological order):
 
-* S. R. Murthy, 'On the triple product property for subgroups of finite nilpotent groups of class 2', arXiv:2602.15796, 2026. DOI: [https://doi.org/10.48550/arXiv.2602.15796](https://doi.org/10.48550/arXiv.2602.15796)
+* S. R. Murthy, 'On the triple product property for subgroups of finite groups of nilpotency class 2', arXiv:2602.15796, 2026. DOI: [https://doi.org/10.48550/arXiv.2602.15796](https://doi.org/10.48550/arXiv.2602.15796)
 
 * S. R. Murthy, 'A note on the triple product property for finite groups with abelian normal subgroups of prime index', arXiv:2512.16730, 2025. DOI: [https://doi.org/10.48550/arXiv.2512.16730](https://doi.org/10.48550/arXiv.2512.16730)
 
