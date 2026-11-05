@@ -25,7 +25,7 @@ The code and data in this repository can be found across a number of folders, pr
 * `TPP_App/lib` - Python wrapper code for parsing the raw search data from GAP
 * `TP_App/static` - the main contents are essentially JSON versions of the raw subgroup TPP search data contained in the HTML tables in `TPP/assets`
 
-In 2026 the author created a single "master" CSV file, [`master_subgroup_tpp_data.csv`](https://github.com/sr-murthy/TPP/blob/master/TPP/master_subgroup_tpp_data.csv), for the subgroup TPP search data from the individual JSON files, containing a total of 49024 entries. The CSV is stored in the top-level `TPP` subfolder. The columns of the CSV are briefly described below (in order of occurrence):
+In 2026 the author created a single "master" CSV file, [`master_subgroup_tpp_data.csv`](https://github.com/sr-murthy/TPP/blob/master/TPP/master_subgroup_tpp_data.csv), for the **subgroup** TPP search data from the individual JSON files, containing a total of 49024 entries. The CSV is stored in the top-level `TPP` subfolder. The columns of the CSV are briefly described below (in order of occurrence):
 
 * `'order'` - the order $|G|$ of the group.
 * `'gap_id'` - the GAP ID of the group in the format `'[<order>, <small group lib. no.>]'`.
